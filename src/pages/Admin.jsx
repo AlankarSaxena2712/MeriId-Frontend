@@ -4,6 +4,7 @@ import AdminHeader from "../components/Admin/AdminHeader";
 import AdminNavbar from "../components/Admin/AdminNavbar";
 import AddGuidelines from "./Admin/AddGuidelines";
 import AddOperator from "./Admin/AddOperator";
+import Login from "./Admin/Login";
 import OperatorList from "./Admin/OperatorList";
 
 const Admin = () => {
@@ -28,6 +29,7 @@ const Admin = () => {
 		<div className="flex flex-col h-screen bg-meriGrey">
 			<AdminHeader />
 			<Routes>
+				<Route path="/login" element={<Login />} />
 				<Route path="/operator/list" element={<OperatorList />} />
 				<Route path="/operator/add" element={<AddOperator />} />
 				<Route path="/guidelines/add" element={<AddGuidelines />} />
