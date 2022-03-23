@@ -26,13 +26,15 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/list") ? (
 						<>
-							<OperatorListActiveIcon className="w-8 h-8 text-white" />
-							<p className="text-sm font-bold text-white">Operator list</p>
+							<div className="bg-meriLightBlue rounded-full px-16">
+								<OperatorListActiveIcon className="w-8 h-8 text-white" />
+								<p className="text-sm font-bold text-white">Operator list</p>
+							</div>	
 						</>
 					) : (
-						<>
+						<>	
 							<OperatorListIcon className="w-8 h-8" />
-							<p className="text-sm">Operator list</p>
+							<p className="text-sm ">Operator list</p>
 						</>
 					)}
 				</NavLink>
@@ -42,8 +44,10 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/add") ? (
 						<>
+						<div className="bg-meriLightBlue rounded-full w-full px-16">
 							<OperatorAddActiveIcon className="w-8 h-8 text-white" />
 							<p className="text-sm font-bold text-white">Add operator</p>
+						</div>
 						</>
 					) : (
 						<>
@@ -58,8 +62,10 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/guidelines/add") ? (
 						<>
+						<div className="bg-meriLightBlue rounded-full px-16">
 							<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
 							<p className="text-sm font-bold text-white">Add guidelines</p>
+							</div>
 						</>
 					) : (
 						<>
