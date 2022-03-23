@@ -8,7 +8,7 @@ const Router = () => {
 		<BrowserRouter>
 			<Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin/*" element={<Admin />} />
                 <Route path="/*" element={<h1 className="flex justify-center items-center text-4xl font-bold h-full">Not Found</h1>} />
             </Routes>
 		</BrowserRouter>
