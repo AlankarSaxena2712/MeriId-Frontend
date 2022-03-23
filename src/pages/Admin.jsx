@@ -25,7 +25,7 @@ const Admin = () => {
 
 
 	return (
-		<div className="flex flex-col h-screen">
+		<div className="flex flex-col h-screen mb-28">
 			<AdminHeader />
 			<Routes>
 				<Route path="/operator/list" element={<OperatorList />} />
