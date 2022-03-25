@@ -26,15 +26,19 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/list") ? (
 						<>
-							<div className="bg-meriLightBlue rounded-full px-16">
+							<div className="bg-meriLightBlue justify-center items-center flex flex-col rounded-full px-16">
 								<OperatorListActiveIcon className="w-8 h-8 text-white" />
-								<p className="text-sm font-bold text-white">Operator list</p>
-							</div>	
+								<p className="text-sm font-bold text-white">
+									Operator list
+								</p>
+							</div>
 						</>
 					) : (
-						<>	
-							<OperatorListIcon className="w-8 h-8" />
-							<p className="text-sm ">Operator list</p>
+						<>
+							<div className="rounded-full justify-center items-center flex flex-col w-full px-16">
+								<OperatorListIcon className="w-8 h-8" />
+								<p className="text-sm ">Operator list</p>
+							</div>
 						</>
 					)}
 				</NavLink>
@@ -44,15 +48,19 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/add") ? (
 						<>
-						<div className="bg-meriLightBlue rounded-full w-full px-16">
-							<OperatorAddActiveIcon className="w-8 h-8 text-white" />
-							<p className="text-sm font-bold text-white">Add operator</p>
-						</div>
+							<div className="bg-meriLightBlue justify-center items-center flex flex-col rounded-full w-full px-16">
+								<OperatorAddActiveIcon className="w-8 h-8 text-white" />
+								<p className="text-sm font-bold text-white">
+									Add operator
+								</p>
+							</div>
 						</>
 					) : (
 						<>
-							<OperatorAddIcon className="w-8 h-8" />
-							<p className="text-sm">Add operator</p>
+							<div className="rounded-full justify-center items-center flex flex-col w-full px-16">
+								<OperatorAddIcon className="w-8 h-8" />
+								<p className="text-sm">Add operator</p>
+							</div>
 						</>
 					)}
 				</NavLink>
@@ -62,15 +70,19 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/guidelines/add") ? (
 						<>
-						<div className="bg-meriLightBlue rounded-full px-16">
-							<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
-							<p className="text-sm font-bold text-white">Add guidelines</p>
+							<div className="bg-meriLightBlue justify-center items-center flex flex-col rounded-full px-16">
+								<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
+								<p className="text-sm font-bold text-white">
+									Add guidelines
+								</p>
 							</div>
 						</>
 					) : (
 						<>
-							<GuidelineAddIcon className="w-8 h-8" />
-							<p className="text-sm">Add guidelines</p>
+							<div className="rounded-full justify-center items-center flex flex-col w-full px-16">
+								<GuidelineAddIcon className="w-8 h-8" />
+								<p className="text-sm">Add guidelines</p>
+							</div>
 						</>
 					)}
 				</NavLink>
