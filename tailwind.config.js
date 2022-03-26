@@ -11,6 +11,13 @@ module.exports = {
         meriGrey: "#eeeeee",
         meriInactiveGrey: "#b0b6c0"
       },
+      margin: {
+        "mb-100": "100px",
+      },
+      width: {
+        "3/3": "31%",
+        "2/2": "45%",
+      }
     },
   },
   plugins: [require("daisyui")],

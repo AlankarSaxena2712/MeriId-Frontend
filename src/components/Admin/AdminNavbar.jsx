@@ -64,7 +64,7 @@ const AdminNavbar = () => {
 						</>
 					)}
 				</NavLink>
-				<NavLink
+				{/* <NavLink
 					to={"/admin/guidelines/add"}
 					className="flex flex-col justify-center items-center text-meriInactiveGrey"
 				>
@@ -85,7 +85,7 @@ const AdminNavbar = () => {
 							</div>
 						</>
 					)}
-				</NavLink>
+				</NavLink> */}
 			</nav>
 		</footer>
 	);

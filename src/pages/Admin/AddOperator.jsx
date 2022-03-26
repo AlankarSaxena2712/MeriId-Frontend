@@ -1,187 +1,214 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { GLOBAL_URL } from "../../config/global/Contant";
+import AdminHeader from "../../components/Admin/AdminHeader";
+import AdminNavbar from "../../components/Admin/AdminNavbar";
+import {ReactComponent as Loader} from "../../static/icons/loader.svg";
+
+import Pincodes from "../../static/json/pincode.json";
+import { useNavigate } from "react-router-dom";
 
 const AddOperator = () => {
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
+	const [pincode, setPincode] = useState("");
+	const [state, setState] = useState("");
+	const [city, setCity] = useState("");
+	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate()
+
+	const handlePincode = (val) => {
+		setPincode(val);
+		if (val.length === 6) {
+			const selectedState = Pincodes.filter((item) => item.pincode === parseInt(val))[0].stateName;
+			const selectedCity = Pincodes.filter((item) => item.pincode === parseInt(val))[0].districtName;
+			setState(selectedState)
+			setCity(selectedCity)
+		}
+	}
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setLoading(true);
+		axios.post(`${GLOBAL_URL}/auth/operator-add`, {
+			name,
+			email,
+			phone_number: phoneNumber,
+			pin_code: pincode,
+			state,
+			city
+			}, {
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": `Token ${localStorage.getItem("token")}`
+				}
+			}).then((res) => {
+				console.log(res.data.data);
+				setName("");
+				setEmail("");
+				setPhoneNumber("");
+				setPincode("");
+				setState("");
+				setCity("");
+				navigate("/admin/operator/list")
+			}).catch((err) => {
+				if (err.response.data.errors.phone_number[0] === "user with this phone number already exists.") {
+					alert("User with this phone number already exists.")
+				}
+				console.log(err.response);
+			}).finally(() => {
+				setLoading(false);
+			}
+		);
+	}
+
 	return (
-		<div className="bg-meriGrey mb-8">
+		<>
+		<AdminHeader />
+		<div className="bg-meriGrey mb-8 px-4">
 			<h1 className="text-3xl font-bold p-4 text-center">Add Operator</h1>
-			<form 
-                class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-8 m-auto"
-                autoComplete="false"    
-            >
-				<div class="flex flex-wrap -mx-3 mb-2">
-					<div class="w-full px-3 mb-1 md:mb-0">
+			<form
+				className="w-full max-w-xl bg-white shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
+				autoComplete="false"
+			>
+				<div className="flex flex-wrap -mx-3 mb-2">
+					<div className="w-full px-3 mb-1 md:mb-0">
 						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-name"
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-name"
 						>
 							Name
 						</label>
 						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-name"
 							type="text"
-                            autoComplete="off"
+							autoComplete="off"
 							placeholder="Enter Name"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
 						/>
-						{/* <p class="text-red-500 text-xs italic">
+						{/* <p className="text-red-500 text-xs italic">
 							Please fill out this field.
 						</p> */}
 					</div>
 				</div>
-				<div class="flex flex-wrap -mx-3 mb-2">
-					<div class="w-1/2 px-3 mb-1 md:mb-0">
+				<div className="flex flex-wrap -mx-3 mb-2">
+					<div className="w-1/2 px-3 mb-1 md:mb-0">
 						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-email"
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-email"
 						>
 							Email
 						</label>
 						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-email"
 							type="email"
-                            autoComplete="off"
+							autoComplete="off"
 							placeholder="Enter Email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 						/>
-						{/* <p class="text-red-500 text-xs italic">
+						{/* <p className="text-red-500 text-xs italic">
 							Please fill out this field.
 						</p> */}
 					</div>
-					<div class="w-1/2 px-3 mb-1 md:mb-0">
+					<div className="w-1/2 px-3 mb-1 md:mb-0">
 						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-phone-number"
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-phone-number"
 						>
 							Phone Number
 						</label>
 						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-phone-number"
 							type="tel"
-                            autoComplete="off"
+							maxLength={10}
+							minLength={10}
+							autoComplete="off"
 							placeholder="Enter Phone Number"
+							value={phoneNumber}
+							onChange={(e) => setPhoneNumber(e.target.value)}
 						/>
-						{/* <p class="text-red-500 text-xs italic">
+						{/* <p className="text-red-500 text-xs italic">
 							Please fill out this field.
 						</p> */}
 					</div>
 				</div>
-				<div class="flex flex-wrap -mx-3 mb-2">
-					<div class="w-1/2 px-3 mb-1 md:mb-0">
+				<div className="flex flex-wrap -mx-3 mb-2">
+					<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
 						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-password"
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-zip"
 						>
-							Password
+							Pin Code
 						</label>
 						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-							id="grid-password"
-							type="password"
-                            autoComplete="off"
-							placeholder="Enter Password"
-						/>
-						{/* <p class="text-red-500 text-xs italic">
-							Please fill out this field.
-						</p> */}
-					</div>
-					<div class="w-1/2 px-3 mb-1 md:mb-0">
-						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-confirm-password"
-						>
-							Confirm Password
-						</label>
-						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-							id="grid-confirm-password"
-							type="password"
-                            autoComplete="off"
-							placeholder="Confirm Password"
-						/>
-						{/* <p class="text-red-500 text-xs italic">
-							Please fill out this field.
-						</p> */}
-					</div>
-				</div>
-				<div class="flex flex-wrap -mx-3 mb-2">
-					<div class="w-full px-3">
-						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-address"
-						>
-							Address
-						</label>
-						<input
-							class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-							id="grid-address"
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-zip"
 							type="text"
-							placeholder="Enter Address"
+							autoComplete="off"
+							maxLength={6}
+							minLength={6}
+							placeholder="Enter Pin Code"
+							value={pincode}
+							onChange={(e) => handlePincode(e.target.value)}
 						/>
-						{/* <p class="text-gray-600 text-xs italic">
-							Make it as long and as crazy as you'd like
-						</p> */}
 					</div>
-				</div>
-				<div class="flex flex-wrap -mx-3 mb-2">
-					<div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+					<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
 						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-city"
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-state"
+						>
+							State
+						</label>
+						<input
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+							id="grid-state"
+							type="text"
+							placeholder="Enter State"
+							value={state}
+							onChange={(e) => setState(e.target.value)}
+						/>
+					</div>
+					<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+						<label
+							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-city"
 						>
 							City
 						</label>
 						<input
-							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
 							id="grid-city"
 							type="text"
-							placeholder="Albuquerque"
-						/>
-					</div>
-					<div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-state"
-						>
-							State
-						</label>
-						<div class="relative">
-							<select
-								class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-								id="grid-state"
-							>
-								<option>New Mexico</option>
-								<option>Missouri</option>
-								<option>Texas</option>
-							</select>
-							<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-								<svg
-									class="fill-current h-4 w-4"
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 20 20"
-								>
-									<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-						<label
-							class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							for="grid-zip"
-						>
-							Zip
-						</label>
-						<input
-							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-							id="grid-zip"
-							type="text"
-							placeholder="90210"
+							placeholder="Enter City"
+							value={city}
+							onChange={(e) => setCity(e.target.value)}
 						/>
 					</div>
 				</div>
+				<div className="flex items-center justify-end mt-5">
+					<button
+						className="bg-meriBlue hover:bg-meriLightBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						type="button"
+						onClick={(e) => handleSubmit(e)}
+						disabled={loading}
+					>
+						{loading ? (
+							<Loader className="h-6 w-24 bg-transparent" />
+						) : (
+							<span>Add Operator</span>
+						)}
+					</button>
+				</div>
 			</form>
 		</div>
+		<AdminNavbar />
+		</>
 	);
 };
 
