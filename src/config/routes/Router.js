@@ -20,6 +20,9 @@ const Router = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		if (pathname === "/") {
+			navigate("/user");
+		}
 		if (pathname === "/admin/" || pathname === "/admin") {
 			navigate("/admin/operator/list");
 		}
@@ -38,6 +41,7 @@ const Router = () => {
 		<AuthProvider>
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/user/*" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
 				<Route path="/admin/operator/list" element={<PrivateRoute />}>
 					<Route
