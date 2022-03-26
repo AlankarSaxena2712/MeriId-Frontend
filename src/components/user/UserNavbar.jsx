@@ -43,7 +43,7 @@ const UserNavbar = () => {
 					)}
 				</NavLink>
 				<NavLink
-					to={"user/showbooking"}
+					to={"/user/showbooking"}
 					className="flex flex-col justify-center items-center text-meriInactiveGrey"
 				>
 					{pathMatchRoute("user/showbooking") ? (
@@ -65,10 +65,10 @@ const UserNavbar = () => {
 					)}
 				</NavLink>
                 <NavLink
-					to={"user/userguidelines"}
+					to={"/user/guidelines"}
 					className="flex flex-col justify-center items-center text-meriInactiveGrey"
 				>
-					{pathMatchRoute("user/userguidelines") ? (
+					{pathMatchRoute("/user/guidelines") ? (
 						<>
 							<div className="bg-meriLightBlue justify-center items-center flex flex-col rounded-full w-full px-16">
 								<OperatorAddActiveIcon className="w-8 h-8 text-white" />

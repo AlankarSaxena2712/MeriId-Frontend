@@ -35,13 +35,12 @@ const Home = () => {
 
   return (
     <div className='flex flex-col h-screen bg-white'>
-    <h1>User Admin Panel</h1>
     <UserHeader />
     <Routes>
       <Route path="/addUser" element={<AddUser />} />
       <Route path="/loginuser" element={<Loginuser />} />
       <Route path="/showbooking" element={<Showbooking />} />
-      <Route path="/userguidelines" element={<UserGuidelines />} />
+      <Route path="/guidelines" element={<UserGuidelines />} />
       <Route path="/userinfo" element={<UserInfo />} />
       
     </Routes>

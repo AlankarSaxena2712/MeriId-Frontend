@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ckeditor from "react-ckeditor-component/lib/ckeditor";
 
@@ -18,7 +18,7 @@ const UserGuidelines = () => {
           <ckeditor
             activeClass="p10"
             // eslint-disable-next-line no-undef
-            content={notification}
+            // content={notification}
           />
         </div> 
       <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
