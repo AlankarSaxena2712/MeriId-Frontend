@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Logo from "../../static/img/MeriIdLogoWithoutBackgroundWhite.png";
 import { ReactComponent as Logout } from "../../static/icons/logout.svg";
 import useAuth from "../../config/context/AuthContext";
@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 const AdminHeader = () => {
 
 	const {logout} = useAuth();
-	const {userData, isUser} = useToken();
+	const {userData} = useToken();
 
 	const { pathname } = useLocation();
 

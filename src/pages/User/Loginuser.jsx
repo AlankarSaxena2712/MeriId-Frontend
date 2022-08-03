@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 
 const UserLogin = () => {
     return (
@@ -36,7 +36,7 @@ const UserLogin = () => {
                     </div>
                     <div class="flex items-center mb-6 -mt-4">
                         <div class="flex ml-auto">
-                            <a href="#" class="inline-flex text-xs font-thin text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white">
+                            <a href="/" class="inline-flex text-xs font-thin text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white">
                                 Forgot Your Password?
                             </a>
                         </div>
@@ -49,7 +49,7 @@ const UserLogin = () => {
                 </form>
             </div>
             <div class="flex items-center justify-center mt-6">
-                <a href="#" target="_blank" class="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">
+                <a href="/" target="_blank" class="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">
                     <span class="ml-2">
                         You don&#x27;t have an account?
                     </span>

@@ -9,7 +9,7 @@ const AddUser = () => {
 				</div>
 				<span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
 					<a
-						href="#"
+						href="/"
 						target="_blank"
 						class="text-sm text-blue-500 underline hover:text-blue-700"
 					>

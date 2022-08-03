@@ -2,11 +2,6 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import AdminHeader from "../components/Admin/AdminHeader";
 import AdminNavbar from "../components/Admin/AdminNavbar";
-import AddGuidelines from "./Admin/AddGuidelines";
-import AddOperator from "./Admin/AddOperator";
-import Login from "./Admin/Login";
-import OperatorList from "./Admin/OperatorList";
-import PrivateRoute from "../config/routes/PrivateRoute";
 
 const Admin = () => {
 	const { pathname } = useLocation();

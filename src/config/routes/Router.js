@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import {
-	BrowserRouter,
 	Route,
 	Routes,
 	useLocation,
 	useNavigate,
 } from "react-router-dom";
-import Admin from "../../pages/Admin";
 import AddGuidelines from "../../pages/Admin/AddGuidelines";
 import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";

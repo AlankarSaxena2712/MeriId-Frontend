@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import UserHeader from '../components/user/UserHeader';
 import UserNavbar from '../components/user/UserNavbar';
 import AddUser from "./User/AddUser";
@@ -9,8 +9,8 @@ import UserInfo from './User/UserInfo';
 import UserGuidelines from './User/UserGuidelines';
 
 const Home = () => {
-  const {pathname} = useLocation();
-  const navigate = useNavigate();
+  // const {pathname} = useLocation();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   if (pathname === "/user" || pathname === "/login") {

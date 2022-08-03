@@ -5,6 +5,11 @@ import AdminNavbar from "../../components/Admin/AdminNavbar";
 
 const AddGuidelines = () => {
 	const [notification, setNotification] = useState("");
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setNotification("")
+	}
 	return (
     <>
       <AdminHeader />
@@ -31,6 +36,7 @@ const AddGuidelines = () => {
 					<button
 						class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
 						type="button"
+						onClick={handleSubmit}
 					>
 						post
 					</button>
