@@ -1,21 +1,29 @@
+import devTools from "devtools-detect";
 import React, { useEffect } from "react";
-import {
-	Route,
-	Routes,
-	useLocation,
-	useNavigate,
-} from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import AddGuidelines from "../../pages/Admin/AddGuidelines";
 import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";
 import OperatorList from "../../pages/Admin/OperatorList";
 import Home from "../../pages/Home";
+import Unauthorized from "../../pages/Unauthorized";
 import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 
 const Router = () => {
 	const { pathname } = useLocation();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.addEventListener("contextmenu", function (e) {
+			e.preventDefault();
+		});
+		window.addEventListener("devtoolschange", function (e) {
+			if (e.detail.isOpen) {
+				window.location.href = "/unauthorized";
+			}
+		})
+	}, []);
 
 	useEffect(() => {
 		if (pathname === "/") {
@@ -59,6 +67,7 @@ const Router = () => {
 						element={<AddGuidelines />}
 					/>
 				</Route>
+				<Route path="/unauthorized" element={<Unauthorized />} />
 				<Route
 					path="/*"
 					element={
