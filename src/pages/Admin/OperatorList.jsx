@@ -50,7 +50,7 @@ const OperatorList = () => {
 										<p>{operator.email}</p>
 										<p>{operator.phone_number}</p>
 										<p>{operator.city},{" "}{operator.state},{" "}{operator.pin_code}</p>
-										<Link to={`/admin/operator/${operator.uuid}`} className="card-actions justify-end">
+										<Link to={`/admin/operator/${operator.id}`} className="card-actions justify-end">
 											<button className="btn btn-info btn-outline">View Details</button>
 										</Link>
 									</div>

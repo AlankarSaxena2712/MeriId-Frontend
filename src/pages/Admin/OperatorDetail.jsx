@@ -34,6 +34,7 @@ const OperatorDetail = () => {
             );
         };
         fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     return (
@@ -61,9 +62,9 @@ const OperatorDetail = () => {
                 ) : (
                     <>
                         <div className="tabs tabs-boxed flex justify-center gap-10 bg-meriCreme">
-                            <a onClick={() => setTabSelected(0)} className={`tab tab-lg text-2xl ${tabSelected === 0 ? "tab-active" : ""}`}>Given Task</a> 
-                            <a onClick={() => setTabSelected(1)} className={`tab tab-lg text-2xl ${tabSelected === 1 ? "tab-active" : ""}`}>Attendance</a> 
-                            <a onClick={() => setTabSelected(2)} className={`tab tab-lg text-2xl ${tabSelected === 2 ? "tab-active" : ""}`}>Feedback</a>
+                            <span onClick={() => setTabSelected(0)} className={`tab tab-lg text-2xl ${tabSelected === 0 ? "tab-active" : ""}`}>Given Task</span> 
+                            <span onClick={() => setTabSelected(1)} className={`tab tab-lg text-2xl ${tabSelected === 1 ? "tab-active" : ""}`}>Attendance</span> 
+                            <span onClick={() => setTabSelected(2)} className={`tab tab-lg text-2xl ${tabSelected === 2 ? "tab-active" : ""}`}>Feedback</span>
                         </div>
                         <div className="">
                             {tabSelected === 0 && <div className="p-5">
