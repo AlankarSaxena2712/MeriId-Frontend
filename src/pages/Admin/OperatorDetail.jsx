@@ -40,7 +40,7 @@ const OperatorDetail = () => {
     return (
 		<div className="mb-28">
 			<AdminHeader />
-			<div className="bg-white p-5 m-5 flex justify-between rounded">
+			<div className="bg-white p-5 m-5 flex justify-between rounded mx-28 mt-20">
                 <div>
                     <p className="text-3xl font-bold">{operator?.name}</p>
                     <p className="text-xl">{operator?.email}</p>
