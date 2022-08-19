@@ -17,7 +17,7 @@ const AdminHeader = () => {
 	}, [userData])
 
 	return (
-		<header className="bg-meriBlue flex justify-center items-center font-bold text-white h-14 text-3xl relative">
+		<header className="bg-meriRed flex justify-center items-center font-bold text-white h-16 text-3xl relative">
 			<img src={Logo} alt="logo" className="contain h-12 w-12" />
 			<p>मेरी Id</p>
 			{pathname !== "/admin/login" && (

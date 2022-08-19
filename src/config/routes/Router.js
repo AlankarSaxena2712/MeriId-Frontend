@@ -8,6 +8,7 @@ import {
 import AddGuidelines from "../../pages/Admin/AddGuidelines";
 import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";
+import OperatorDetail from "../../pages/Admin/OperatorDetail";
 import OperatorList from "../../pages/Admin/OperatorList";
 import Home from "../../pages/Home";
 import { AuthProvider } from "../context/AuthContext";
@@ -19,7 +20,7 @@ const Router = () => {
 
 	useEffect(() => {
 		if (pathname === "/") {
-			navigate("/user");
+			navigate("/admin");
 		}
 		if (pathname === "/admin/" || pathname === "/admin") {
 			navigate("/admin/operator/list");
@@ -51,6 +52,12 @@ const Router = () => {
 					<Route
 						path="/admin/operator/add"
 						element={<AddOperator />}
+					/>
+				</Route>
+				<Route path="/admin/operator/:uuid" element={<PrivateRoute />}>
+					<Route
+						path="/admin/operator/:uuid"
+						element={<OperatorDetail />}
 					/>
 				</Route>
 				<Route path="/admin/guidelines/add" element={<PrivateRoute />}>

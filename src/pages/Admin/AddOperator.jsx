@@ -66,7 +66,7 @@ const AddOperator = () => {
 	return (
 		<>
 		<AdminHeader />
-		<div className="bg-meriGrey mb-8 px-4">
+		<div className="mb-8 px-4">
 			<h1 className="text-3xl font-bold p-4 text-center">Add Operator</h1>
 			<form
 				className="w-full max-w-xl bg-white shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
@@ -193,7 +193,7 @@ const AddOperator = () => {
 				</div>
 				<div className="flex items-center justify-end mt-5">
 					<button
-						className="bg-meriBlue hover:bg-meriLightBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						className=" bg-meriRed hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 						type="button"
 						onClick={(e) => handleSubmit(e)}
 						disabled={loading}

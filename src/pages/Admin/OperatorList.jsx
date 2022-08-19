@@ -4,6 +4,7 @@ import AdminNavbar from "../../components/Admin/AdminNavbar";
 import axios from "axios";
 import { GLOBAL_URL } from "../../config/global/Contant";
 import { ReactComponent as Loader } from "../../static/icons/loader.svg";
+import { Link } from "react-router-dom";
 
 const OperatorList = () => {
 	const [operators, setOperators] = useState([]);
@@ -33,7 +34,7 @@ const OperatorList = () => {
 	return (
 		<>
 			<AdminHeader />
-			<div className="pt-3 px-8 md:px-32 w-full max-h-full h-full bg-meriGrey">
+			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-meriCreme"> 
 				<h1 className="text-3xl font-bold p-4 text-center mb-5">
 					Operators
 				</h1>
@@ -43,29 +44,15 @@ const OperatorList = () => {
 					<div className="w-full">
 						<div className="flex flex-wrap -m-4">
 							{operators.map((operator, index) => (
-								<div key={index} className="p-4 m-2 w-full md:w-2/2 lg:w-3/3 shadow-md rounded-lg shadow-meriLightBlue bg-white">
-									<div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-										<div className="flex-grow">
-											<h2 className="title-font font-medium text-lg text-gray-900 relative">
-												{operator.name}
-												{operator.status && (
-													<span className="absolute right-0 text-xs bg-meriLightBlue text-white px-2 py-1 rounded-full">
-														{operator.status}
-													</span>
-												)}
-											</h2>
-											<h3 className="text-gray-500 text-sm">
-												{operator.email}
-											</h3>
-											<h3 className="text-gray-500 text-sm mb-3">
-												{operator.phone_number}
-											</h3>
-											<p className="mb-2">
-												{operator.city},{" "}
-												{operator.state},{" "}
-												{operator.pin_code}
-											</p>
-										</div>
+								<div key={index} className="card w-96 bg-base-100 shadow-xl m-2">
+									<div className="card-body">
+										<h2 className="card-title">{operator.name}</h2>
+										<p>{operator.email}</p>
+										<p>{operator.phone_number}</p>
+										<p>{operator.city},{" "}{operator.state},{" "}{operator.pin_code}</p>
+										<Link to={`/admin/operator/${operator.uuid}`} className="card-actions justify-end">
+											<button className="btn btn-info btn-outline">View Details</button>
+										</Link>
 									</div>
 								</div>
 							))}
