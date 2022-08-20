@@ -1,10 +1,10 @@
 import React from "react";
-import { ReactComponent as OperatorListIcon } from "../../static/icons/list-outline.svg";
-import { ReactComponent as OperatorListActiveIcon } from "../../static/icons/list.svg";
-import { ReactComponent as OperatorAddIcon } from "../../static/icons/userAdd-outline.svg";
-import { ReactComponent as OperatorAddActiveIcon } from "../../static/icons/userAdd.svg";
-import { ReactComponent as GuidelineAddIcon } from "../../static/icons/guideline-outline.svg";
-import { ReactComponent as GuidelineAddActiveIcon } from "../../static/icons/guideline.svg";
+import { ReactComponent as OperatorListIcon } from "../static/icons/list-outline.svg";
+import { ReactComponent as OperatorListActiveIcon } from "../static/icons/list.svg";
+import { ReactComponent as OperatorAddIcon } from "../static/icons/userAdd-outline.svg";
+import { ReactComponent as OperatorAddActiveIcon } from "../static/icons/userAdd.svg";
+import { ReactComponent as GuidelineAddIcon } from "../static/icons/guideline-outline.svg";
+import { ReactComponent as GuidelineAddActiveIcon } from "../static/icons/guideline.svg";
 import { NavLink, useLocation } from "react-router-dom";
 
 const AdminNavbar = () => {
@@ -18,7 +18,7 @@ const AdminNavbar = () => {
 	};
 
 	return (
-		<footer className="fixed bottom-0 left-0 right-0 flex justify-center items-center h-16 bg-meriCreme border-t-2 border-orange-200">
+		<footer className="fixed bottom-0 left-0 right-0 flex justify-center items-center h-16 bg-meriWhite shadow-md shadow-black">
 			<nav className="flex justify-around items-center h-full w-full">
 				<NavLink
 					to={"/admin/operator/list"}
@@ -26,7 +26,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/list") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<OperatorListActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Operator list
@@ -48,7 +48,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/add") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg w-full px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg w-full px-8 py-2">
 								<OperatorAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Add operator
@@ -70,7 +70,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/bookings") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Bookings
@@ -92,10 +92,10 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/guidelines/add") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
-									Add guidelines
+									Guidelines
 								</p>
 							</div>
 						</>
@@ -103,7 +103,7 @@ const AdminNavbar = () => {
 						<>
 							<div className="rounded-full justify-center items-center flex gap-2 w-full px-8">
 								<GuidelineAddIcon className="w-8 h-8 text-black" />
-								<p className="text-md text-black">Add guidelines</p>
+								<p className="text-md text-black">Guidelines</p>
 							</div>
 						</>
 					)}

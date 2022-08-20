@@ -2,11 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import AdminHeader from "../../components/Admin/AdminHeader";
-import AdminNavbar from "../../components/Admin/AdminNavbar";
-import Attendance from "../../components/Admin/Attendance";
-import GivenTask from "../../components/Admin/GivenTask";
-import GoogleMap from "../../components/Admin/GoogleMap";
+import AdminHeader from "../../components/AdminHeader";
+import AdminNavbar from "../../components/AdminNavbar";
+import GivenTask from "../../components/GivenTask";
+import GoogleMap from "../../components/GoogleMap";
 import { GLOBAL_URL } from "../../config/global/Contant";
 
 const OperatorDetail = () => {
@@ -41,7 +40,7 @@ const OperatorDetail = () => {
     return (
 		<div className="mb-28">
 			<AdminHeader />
-			<div className="bg-white p-5 m-5 flex justify-between rounded mx-28 mt-20">
+			<div className="bg-slate-100 p-5 m-5 flex justify-between rounded mx-28 mt-20">
                 <div>
                     <p className="text-3xl font-bold">{operator?.name}</p>
                     <p className="text-xl">{operator?.email}</p>
@@ -62,7 +61,7 @@ const OperatorDetail = () => {
                     </div>
                 ) : (
                     <>
-                        <div className="tabs tabs-boxed flex justify-center gap-10 bg-meriCreme">
+                        <div className="tabs tabs-boxed flex justify-center gap-10 bg-meriWhite">
                             <span onClick={() => setTabSelected(0)} className={`tab tab-lg text-2xl ${tabSelected === 0 ? "tab-active" : ""}`}>Given Task</span> 
                             <span onClick={() => setTabSelected(1)} className={`tab tab-lg text-2xl ${tabSelected === 1 ? "tab-active" : ""}`}>Attendance</span> 
                             <span onClick={() => setTabSelected(2)} className={`tab tab-lg text-2xl ${tabSelected === 2 ? "tab-active" : ""}`}>Feedback</span>

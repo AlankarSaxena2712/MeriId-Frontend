@@ -10,9 +10,10 @@ import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";
 import OperatorDetail from "../../pages/Admin/OperatorDetail";
 import OperatorList from "../../pages/Admin/OperatorList";
-import Home from "../../pages/Home";
 import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
+import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
+import Booking from "../../pages/Admin/Booking";
 
 const Router = () => {
 	const { pathname } = useLocation();
@@ -39,8 +40,6 @@ const Router = () => {
 	return (
 		<AuthProvider>
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/user/*" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
 				<Route path="/admin/operator/list" element={<PrivateRoute />}>
 					<Route
@@ -66,11 +65,17 @@ const Router = () => {
 						element={<AddGuidelines />}
 					/>
 				</Route>
+				<Route path="/admin/bookings" element={<PrivateRoute />}>
+					<Route
+						path="/admin/bookings"
+						element={<Booking />}
+					/>
+				</Route>
 				<Route
 					path="/*"
 					element={
-						<h1 className="flex justify-center items-center text-4xl font-bold h-full">
-							Not Found
+						<h1 className="flex justify-center items-center text-4xl font-bold h-full  py-28 px-32">
+								<NotFound />
 						</h1>
 					}
 				/>

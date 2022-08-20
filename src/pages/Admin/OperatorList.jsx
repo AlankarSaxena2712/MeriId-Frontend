@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AdminHeader from "../../components/Admin/AdminHeader";
-import AdminNavbar from "../../components/Admin/AdminNavbar";
+import AdminHeader from "../../components/AdminHeader";
+import AdminNavbar from "../../components/AdminNavbar";
 import axios from "axios";
 import { GLOBAL_URL } from "../../config/global/Contant";
 import { ReactComponent as Loader } from "../../static/icons/loader.svg";
@@ -34,12 +34,14 @@ const OperatorList = () => {
 	return (
 		<>
 			<AdminHeader />
-			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-meriCreme"> 
-				<h1 className="text-3xl font-bold p-4 text-center mb-5">
+			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-white"> 
+				<h1 className="text-4xl font-bold p-4 text-center mb-5 text-black">
 					Operators
 				</h1>
 				{loading ? (
-					<Loader />
+				 <div className="items-center justify-center h-screen pt-20">
+					 <Loader />
+	  			</div>
 				) : (
 					<div className="w-full">
 						<div className="flex flex-wrap -m-4">

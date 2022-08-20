@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { GLOBAL_URL } from "../../config/global/Contant";
-import AdminHeader from "../../components/Admin/AdminHeader";
-import AdminNavbar from "../../components/Admin/AdminNavbar";
+import AdminHeader from "../../components/AdminHeader";
+import AdminNavbar from "../../components/AdminNavbar";
 import {ReactComponent as Loader} from "../../static/icons/loader.svg";
 
 import Pincodes from "../../static/json/pincode.json";
@@ -66,10 +66,10 @@ const AddOperator = () => {
 	return (
 		<>
 		<AdminHeader />
-		<div className="mb-8 px-4">
-			<h1 className="text-3xl font-bold p-4 text-center">Add Operator</h1>
+		<div className="mb-8 px-4 ">
+			<h1 className="text-4xl font-bold pt-10 pb-10 text-center text-black">Add Operator</h1>
 			<form
-				className="w-full max-w-xl bg-white shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
+				className="w-full max-w-xl bg-slate-200 shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
 				autoComplete="false"
 			>
 				<div className="flex flex-wrap -mx-3 mb-2">
@@ -81,7 +81,7 @@ const AddOperator = () => {
 							Name
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-name"
 							type="text"
 							autoComplete="off"
@@ -103,7 +103,7 @@ const AddOperator = () => {
 							Email
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-email"
 							type="email"
 							autoComplete="off"
@@ -123,7 +123,7 @@ const AddOperator = () => {
 							Phone Number
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-phone-number"
 							type="tel"
 							maxLength={10}
@@ -147,7 +147,7 @@ const AddOperator = () => {
 							Pin Code
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							className="  appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 							id="grid-zip"
 							type="text"
 							autoComplete="off"
@@ -166,7 +166,7 @@ const AddOperator = () => {
 							State
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
 							id="grid-state"
 							type="text"
 							placeholder="Enter State"
@@ -182,7 +182,7 @@ const AddOperator = () => {
 							City
 						</label>
 						<input
-							className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+							className=" appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
 							id="grid-city"
 							type="text"
 							placeholder="Enter City"
@@ -193,7 +193,7 @@ const AddOperator = () => {
 				</div>
 				<div className="flex items-center justify-end mt-5">
 					<button
-						className=" bg-meriRed hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						className=" bg-orange-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 						type="button"
 						onClick={(e) => handleSubmit(e)}
 						disabled={loading}
