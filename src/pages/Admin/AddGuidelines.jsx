@@ -35,7 +35,7 @@ const AddGuidelines = () => {
       <AdminHeader />
 	  {
 	  	loading ?   
-		  <div className="flex items-center justify-center h-screen">
+		  <div className="items-center justify-center h-screen pt-20">
 					 <Loader />
 		  </div>
 		  :

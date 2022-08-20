@@ -35,11 +35,13 @@ const OperatorList = () => {
 		<>
 			<AdminHeader />
 			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-white"> 
-				<h1 className="text-3xl font-bold p-4 text-center mb-5">
+				<h1 className="text-4xl font-bold p-4 text-center mb-5 text-black">
 					Operators
 				</h1>
 				{loading ? (
-					<Loader />
+				 <div className="items-center justify-center h-screen pt-20">
+					 <Loader />
+	  			</div>
 				) : (
 					<div className="w-full">
 						<div className="flex flex-wrap -m-4">
