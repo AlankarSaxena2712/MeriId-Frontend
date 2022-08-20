@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AdminHeader from "../../components/Admin/AdminHeader";
 import AdminNavbar from "../../components/Admin/AdminNavbar";
+import Attendance from "../../components/Admin/Attendance";
 import GivenTask from "../../components/Admin/GivenTask";
 import GoogleMap from "../../components/Admin/GoogleMap";
 import { GLOBAL_URL } from "../../config/global/Contant";
@@ -71,8 +72,7 @@ const OperatorDetail = () => {
                                 <GivenTask />
                             </div>}
                             {tabSelected === 1 && <div className="p-5">
-                                <p className="text-2xl font-bold">Attendance</p>
-                                <p className="text-xl">{operator?.attendance}</p>
+                                <Attendance />
                             </div>}
                             {tabSelected === 2 && <div className="p-5">
                                 <p className="text-2xl font-bold">Feedback</p>
