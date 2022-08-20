@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as EyeLogo} from "../../static/icons/eye-solid.svg";
+import {ReactComponent as EyeLogo} from "../static/icons/eye-solid.svg";
 
 const Attendance = () => {
   return (

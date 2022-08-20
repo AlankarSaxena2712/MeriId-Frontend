@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AdminHeader from "../../components/AdminHeader";
 import AdminNavbar from "../../components/AdminNavbar";
+import Attendance from "../../components/Attendance";
 import GivenTask from "../../components/GivenTask";
 import GoogleMap from "../../components/GoogleMap";
 import { GLOBAL_URL } from "../../config/global/Contant";
