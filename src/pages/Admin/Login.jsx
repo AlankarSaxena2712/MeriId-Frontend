@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminHeader from "../../components/AdminHeader";
-import AdminNavbar from "../../components/AdminNavbar";
 import useAuth from "../../config/context/AuthContext";
+import gif from '../../static/gif/signin.gif'
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -16,19 +16,21 @@ const Login = () => {
 
 	return (
 		<>
-			<AdminHeader />
-			<div className="bg-meriGrey h-screen overflow-y-hidden">
-				<h1 className="text-3xl font-bold p-4 text-center">Sign In</h1>
-				<div className="w-full flex justify-center items-center pt-10">
-					<form className="bg-white w-full max-w-md shadow-md rounded px-8 pt-6 pb-8 mb-4">
-						<div className="mb-4">
-							<label
-								className="block text-gray-700 text-sm font-bold mb-2"
-								htmlFor="email"
-							>
-								Email
-							</label>
-							<input
+		<AdminHeader />
+			<div className="bg-white h-screen overflow-y-hidden">
+				<h1 className="text-6xl font-bold p-8 text-center text-black">Sign In</h1>
+				
+			<div className="flex justify-center items-center">			
+					<div className="flex justify-center items-center w-2/4">
+						<form className="bg-white w-full max-w-md shadow-md rounded px-8 pt-6 pb-8 mb-4">
+							<div className="mb-4">
+								<label
+									className="block text-gray-700 text-sm font-bold mb-2"
+									htmlFor="email"
+								>
+									Email
+								</label>
+								<input
 								className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="email"
 								type="text"
@@ -55,7 +57,7 @@ const Login = () => {
 						</div>
 						<div className="flex items-center justify-between">
 							<button
-								className="bg-meriBlue hover:bg-meriLightBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+								className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 								type="button"
 								onClick={(e) => handleSubmit(e)}
 							>
@@ -76,8 +78,9 @@ const Login = () => {
 						</div>
 					</form>
 				</div>
+				<div > <img src={gif} className="max-w-none "/> </div>
 			</div>
-			<AdminNavbar />
+		</div>
 		</>
 	);
 };
