@@ -1,10 +1,10 @@
 import React from "react";
-import { ReactComponent as OperatorListIcon } from "../../static/icons/list-outline.svg";
-import { ReactComponent as OperatorListActiveIcon } from "../../static/icons/list.svg";
-import { ReactComponent as OperatorAddIcon } from "../../static/icons/userAdd-outline.svg";
-import { ReactComponent as OperatorAddActiveIcon } from "../../static/icons/userAdd.svg";
-import { ReactComponent as GuidelineAddIcon } from "../../static/icons/guideline-outline.svg";
-import { ReactComponent as GuidelineAddActiveIcon } from "../../static/icons/guideline.svg";
+import { ReactComponent as OperatorListIcon } from "../static/icons/list-outline.svg";
+import { ReactComponent as OperatorListActiveIcon } from "../static/icons/list.svg";
+import { ReactComponent as OperatorAddIcon } from "../static/icons/userAdd-outline.svg";
+import { ReactComponent as OperatorAddActiveIcon } from "../static/icons/userAdd.svg";
+import { ReactComponent as GuidelineAddIcon } from "../static/icons/guideline-outline.svg";
+import { ReactComponent as GuidelineAddActiveIcon } from "../static/icons/guideline.svg";
 import { NavLink, useLocation } from "react-router-dom";
 
 const AdminNavbar = () => {

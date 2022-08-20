@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from "react";
-import AdminHeader from "../../components/Admin/AdminHeader";
-import AdminNavbar from "../../components/Admin/AdminNavbar";
+import AdminHeader from "../../components/AdminHeader";
+import AdminNavbar from "../../components/AdminNavbar";
 import axios from "axios";
 import { GLOBAL_URL } from "../../config/global/Contant";
 import gif from '../../static/gif/guideline.gif'

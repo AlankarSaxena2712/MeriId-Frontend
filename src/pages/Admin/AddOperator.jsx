@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { GLOBAL_URL } from "../../config/global/Contant";
-import AdminHeader from "../../components/Admin/AdminHeader";
-import AdminNavbar from "../../components/Admin/AdminNavbar";
+import AdminHeader from "../../components/AdminHeader";
+import AdminNavbar from "../../components/AdminNavbar";
 import {ReactComponent as Loader} from "../../static/icons/loader.svg";
 
 import Pincodes from "../../static/json/pincode.json";

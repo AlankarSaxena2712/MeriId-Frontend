@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import AdminHeader from "../components/Admin/AdminHeader";
+import AdminHeader from "../components/AdminHeader";
 import AdminNavbar from "../components/Admin/AdminNavbar";
 import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
 const Admin = () => {
