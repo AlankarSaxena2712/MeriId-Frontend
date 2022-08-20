@@ -5,23 +5,26 @@ const BookingCard = () => {
 		<div className="flex w-1/2 justify-center my-4">
 			<div
 				className="
-                        border-l border-r border-b border-t border-gray-400
-                        bg-white
-                        rounded-b rounded-t rounded-l rounded-r
-                        p-4
+						m-1
+                        border-l border-r border-b border-t
+    	                ounded-b rounded-t rounded-l rounded-r
+                        p-6
                         flex flex-col
                         justify-between
                         leading-normal
+						bg-slate-100
                     "
 			>
 				<div className="mb-3 flex justify-between">
-					<div className="text-gray-700 font-bold text-l mb-2">
-						Booking Id
-						<span className="text-gray-700 text-base">B1234567</span>
+					<div className="text-gray-700 font-bold text-l mb-2 ">
+						BookingId
+						<span className="text-gray-700 text-base pl-2">
+							BOOK1234567890
+						</span>
 					</div>
-					<div className="text-gray-700 font-bold text-l mb-2">
+					<div className="text-gray-700 font-bold text-l mb-2 ">
 						Date
-						<span className="text-gray-700 text-base">
+						<span className="text-gray-700 text-base pl-2">
 							20 Aug ,2022
 						</span>
 					</div>
@@ -47,14 +50,14 @@ const BookingCard = () => {
 				<div className="flex items-center">
 					<div className="text-sm">
 						<p className="text-gray-700 text-base">
-							<span className="text-gray-700 font-bold text-l mb-2">
+							<span className="text-gray-700 font-bold text-l mb-2 pr-2">
 								Address
 							</span>
 							B 22/23 Gautam Nagar ,Electronic city, Loreum,Blah
 							Blah.
 						</p>
-						<p className="text-gray-700 text-base mb-2">
-							<span className="text-gray-700 font-bold text-l mb-2">
+						<p className="text-gray-700 text-base mb-2 pt-1 pb-2">
+							<span className="text-gray-700 font-bold text-l mb-2 pr-2 ">
 								Pincode
 							</span>
 							200014
@@ -62,213 +65,60 @@ const BookingCard = () => {
 						<div className="flex items-center justify-between">
 							<div className="p-1">
 								<div className="dropdown inline-block relative">
-									<button
-										className="
-                                                bg-blue-300
-                                                text-gray-700
-                                                font-semibold
-                                                py-2
-                                                px-4
-                                                rounded
-                                                inline-flex
-                                                items-center
-                                            "
-									>
-										<span className="mr-1">Operators</span>
-										<svg
-											className="fill-current h-4 w-4"
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 20 20"
+								<div class="dropdown">
+										<label tabindex="0" class="btn m-1">
+											Click
+										</label>
+										<ul
+											tabindex="0"
+											class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
 										>
-											<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-										</svg>
-									</button>
-									<ul
-										className="
-                                                dropdown-menu
-                                                absolute
-                                                text-gray-700
-                                                pt-1
-                                            "
-									>
-										<li className="">
-											<span
-												className="
-                                                        rounded-t
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												alankr saxena 1234
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												Two
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        rounded-b
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												Three
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        rounded-b
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												Three
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        rounded-b
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												Three
-											</span>
-										</li>
-									</ul>
+											<li>
+												<a>Item 1</a>
+											</li>
+											<li>
+												<a>Item 2</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 							<div className="p-1">
 								<div className="dropdown inline-block relative">
-									<button
-										className="
-                                                bg-green-300
-                                                text-gray-700
-                                                font-semibold
-                                                py-2
-                                                px-4
-                                                rounded
-                                                inline-flex
-                                                items-center
-                                            "
-									>
-										<span className="mr-1">Time Slot</span>
-										<svg
-											className="fill-current h-4 w-4"
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 20 20"
+								<div class="dropdown">
+										<label tabindex="0" class="btn m-1">
+											Click
+										</label>
+										<ul
+											tabindex="0"
+											class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
 										>
-											<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-										</svg>
-									</button>
-									<ul
-										className="
-                                                dropdown-menu
-                                                absolute
-                                                text-gray-700
-                                                pt-1
-                                            "
-									>
-										<li className="">
-											<span
-												className="
-                                                        rounded-t
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												11:00 am
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												2:00 pm
-											</span>
-										</li>
-										<li className="">
-											<span
-												className="
-                                                        rounded-b
-                                                        bg-gray-200
-                                                        hover:bg-gray-400
-                                                        py-2
-                                                        px-4
-                                                        block
-                                                        whitespace-no-wrap
-                                                    "
-												href="#"
-											>
-												4:00 pm
-											</span>
-										</li>
-									</ul>
+											<li>
+												<a>Item 1</a>
+											</li>
+											<li>
+												<a>Item 2</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 							<div className="p-1">
 								<div className="inline-block relative">
-									<button
-										className="
-                                                bg-orange-300
-                                                text-gray-700
-                                                font-semibold
-                                                py-2
-                                                px-6
-                                                rounded
-                                                inline-flex
-                                                items-center
-                                            "
-									>
-										<span className="mr-1">Submit</span>
+									<button className="text-white inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0">
+										{" "}
+										Submit
+										<svg
+											fill="none"
+											stroke="currentColor"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											className="w-4 h-4 ml-1"
+											viewBox="0 0 24 24"
+										>
+											<path d="M5 12h14M12 5l7 7-7 7"></path>
+										</svg>
 									</button>
 								</div>
 							</div>
