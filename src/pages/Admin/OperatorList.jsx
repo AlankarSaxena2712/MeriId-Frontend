@@ -46,7 +46,7 @@ const OperatorList = () => {
 					<div className="w-full">
 						<div className="flex flex-wrap -m-4">
 							{operators.map((operator, index) => (
-								<div key={index} className="card w-96 bg-base-100 shadow-xl m-2">
+								<div key={index} className="card w-96 bg-slate-100 shadow-xl m-2 rounded-md">
 									<div className="card-body">
 										<h2 className="card-title">{operator.name}</h2>
 										<p>{operator.email}</p>

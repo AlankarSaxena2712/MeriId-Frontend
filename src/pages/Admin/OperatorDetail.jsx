@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import AdminHeader from "../../components/AdminHeader";
 import AdminNavbar from "../../components/AdminNavbar";
 import Attendance from "../../components/Attendance";
+import Feedback from "../../components/Feedback";
 import GivenTask from "../../components/GivenTask";
 import GoogleMap from "../../components/GoogleMap";
 import { GLOBAL_URL } from "../../config/global/Contant";
@@ -41,7 +42,7 @@ const OperatorDetail = () => {
     return (
 		<div className="mb-28">
 			<AdminHeader />
-			<div className="bg-slate-100 p-5 m-5 flex justify-between rounded mx-28 mt-20">
+			<div className="bg-slate-100 p-5 m-5 flex justify-between rounded mt-20 container px-5 mx-auto">
                 <div>
                     <p className="text-3xl font-bold">{operator?.name}</p>
                     <p className="text-xl">{operator?.email}</p>
@@ -75,8 +76,7 @@ const OperatorDetail = () => {
                                 <Attendance />
                             </div>}
                             {tabSelected === 2 && <div className="p-5">
-                                <p className="text-2xl font-bold">Feedback</p>
-                                <p className="text-xl">{operator?.feedback}</p>
+                                <Feedback />
                             </div>}
                         </div>
                     </>
