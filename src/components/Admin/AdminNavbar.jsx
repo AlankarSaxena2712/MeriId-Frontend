@@ -26,7 +26,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/list") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<OperatorListActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Operator list
@@ -48,7 +48,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/operator/add") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg w-full px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg w-full px-8 py-2">
 								<OperatorAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Add operator
@@ -70,7 +70,7 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/bookings") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
 									Bookings
@@ -92,10 +92,10 @@ const AdminNavbar = () => {
 				>
 					{pathMatchRoute("/admin/guidelines/add") ? (
 						<>
-							<div className="bg-meriRed justify-center items-center flex gap-2 rounded-lg px-8 py-2">
+							<div className="bg-orange-500 justify-center items-center flex gap-2 rounded-lg px-8 py-2">
 								<GuidelineAddActiveIcon className="w-8 h-8 text-white" />
 								<p className="text-md font-bold text-white">
-									Add guidelines
+									Guidelines
 								</p>
 							</div>
 						</>

@@ -193,7 +193,7 @@ const AddOperator = () => {
 				</div>
 				<div className="flex items-center justify-end mt-5">
 					<button
-						className=" bg-meriRed hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						className=" bg-orange-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 						type="button"
 						onClick={(e) => handleSubmit(e)}
 						disabled={loading}

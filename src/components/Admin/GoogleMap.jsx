@@ -3,7 +3,7 @@ import GoogleMapReact from "google-map-react";
 
 const Marker = () => {
 	return (
-		<div className="absolute top-0 left-0 flex justify-center items-center w-4 h-4 bg-meriRed rounded-full">
+		<div className="absolute top-0 left-0 flex justify-center items-center w-4 h-4 bg-orange-500 rounded-full">
 			<div className="w-2 h-2 bg-white rounded-full"></div>
 		</div>
 	);

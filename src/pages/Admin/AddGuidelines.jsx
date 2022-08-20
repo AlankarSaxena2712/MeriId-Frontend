@@ -39,8 +39,8 @@ const AddGuidelines = () => {
 					 <Loader />
 		  </div>
 		  :
-			<div className="px-32 pt-16 bg-white   justify-center">
-				<h1 className="text-3xl font-bold p-4 text-center text-black ">
+			<div className="px-32 py-8 bg-white ">
+				<h1 className="text-4xl font-bold text-center text-black ">
 					Guidelines
 				</h1>		
 				<div className="flex">
