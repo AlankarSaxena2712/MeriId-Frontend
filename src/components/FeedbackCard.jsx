@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { ReactComponent as Star } from "../static/icons/star.svg";
 
-const FeedbackCard = ({feedback}) => {
+const FeedbackCard = ({ feedback }) => {
 	return (
 		<div class="p-4 md:w-1/2 w-full">
 			<div class="h-full bg-gray-100 p-8 rounded">
 				<div className="flex justify-between">
-					<h2 className="font-bold text-black">{feedback.booking_id}</h2>
+					<h2 className="font-bold text-black">
+						{feedback.booking_id}
+					</h2>
 					<p>
 						{new Date(feedback.created_at).toLocaleString("en-US", {
 							year: "numeric",
@@ -30,15 +32,15 @@ const FeedbackCard = ({feedback}) => {
 								className="color000 svgShape"
 							/>
 						</svg>
-							{feedback.user_name}
+						{feedback.name}
 					</div>
 					<div className="flex gap-4">
-						{feedback.rating.map((i) => <Star className="h-6 w-6" /> )}		
+						{feedback.rating.map((i) => (
+							<Star className="h-6 w-6" />
+						))}
 					</div>
 				</h3>
-				<p class="leading-relaxed my-2">
-						{feedback.description}
-				</p>
+				<p class="leading-relaxed my-2">{feedback.description}</p>
 			</div>
 		</div>
 	);
