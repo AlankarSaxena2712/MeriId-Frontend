@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AdminHeader from "../../components/AdminHeader";
-import AdminNavbar from "../../components/AdminNavbar";
 import Attendance from "../../components/Attendance";
 import Feedback from "../../components/Feedback";
 import GivenTask from "../../components/GivenTask";
@@ -21,6 +20,7 @@ const OperatorDetail = () => {
 	const [locationOpen, setLocationOpen] = useState(false);
 
     const navigate = useNavigate();
+
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -119,16 +119,19 @@ const OperatorDetail = () => {
 								<GivenTask />
 							</div>
 						)}
+
 						{tabSelected === 1 && (
 							<div className="p-5">
 								<Attendance />
 							</div>
 						)}
+
 						{tabSelected === 2 && (
 							<div className="p-5">
-								<Feedback />
+								<Feedback uuid ={uuid} />
 							</div>
-						)}
+						
+                        )}
 					</div>
 				</>
 			)}

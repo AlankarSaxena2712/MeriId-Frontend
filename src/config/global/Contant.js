@@ -60,24 +60,6 @@ const getTimeSlotOfOperator = async () => {
         });
 };
 
-const feedBackOfOperator = async () => {
-    // pass operartor id
-    await axios
-        .get(`${GLOBAL_URL}/general/feedback?operator=`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Token ${localStorage.getItem("token")}`,
-            },
-        })
-        .then(async (response) => {
-            let data = [await response.data.data];
-        })
-        .catch(async (error) => {
-            setError(await error);
-        });
-};
-
-
 
 const getAttendanceOfOperator = async () => {
     await axios

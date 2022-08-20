@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Star } from "../static/icons/star.svg";
 
-const FeedbackCard = () => {
+const FeedbackCard = ({feedback}) => {
 	return (
 		<div class="p-4 md:w-1/2 w-full">
 			<div class="h-full bg-gray-100 p-8 rounded">
 				<div className="flex justify-between">
-					<h2 className="font-bold text-black">BOOK9876543210</h2>
+					<h2 className="font-bold text-black">{feedback.booking_id}</h2>
 					<p>
-						{new Date().toLocaleString("en-US", {
+						{new Date(feedback.created_at).toLocaleString("en-US", {
 							year: "numeric",
 							month: "long",
 							day: "numeric",
@@ -30,21 +30,14 @@ const FeedbackCard = () => {
 								className="color000 svgShape"
 							/>
 						</svg>
-						Alankar Saxena
+							{feedback.user_name}
 					</div>
 					<div className="flex gap-4">
-						<Star className="h-6 w-6" />
-						<Star className="h-6 w-6" />
-						<Star className="h-6 w-6" />
-						<Star className="h-6 w-6" />
-						<Star className="h-6 w-6" />
+						{feedback.rating.map((i) => <Star className="h-6 w-6" /> )}		
 					</div>
 				</h3>
 				<p class="leading-relaxed my-2">
-					Synth chartreuse iPhone lomo cray raw denim brunch everyday
-					carry neutra before they sold out fixie 90's microdosing.
-					Tacos pinterest fanny pack venmo, post-ironic heirloom
-					try-hard pabst authentic iceland.
+						{feedback.description}
 				</p>
 			</div>
 		</div>
