@@ -12,6 +12,7 @@ import OperatorDetail from "../../pages/Admin/OperatorDetail";
 import OperatorList from "../../pages/Admin/OperatorList";
 import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
+import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
 
 const Router = () => {
 	const { pathname } = useLocation();
@@ -66,8 +67,8 @@ const Router = () => {
 				<Route
 					path="/*"
 					element={
-						<h1 className="flex justify-center items-center text-4xl font-bold h-full">
-							Not Found
+						<h1 className="flex justify-center items-center text-4xl font-bold h-full  py-28 px-32">
+								<NotFound />
 						</h1>
 					}
 				/>
