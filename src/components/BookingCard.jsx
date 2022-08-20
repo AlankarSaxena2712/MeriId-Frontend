@@ -92,7 +92,7 @@ const BookingCard = () => {
                                             "
 									>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-t
                                                         bg-gray-200
@@ -105,10 +105,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												alankr saxena 1234
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         bg-gray-200
                                                         hover:bg-gray-400
@@ -120,10 +120,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												Two
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-b
                                                         bg-gray-200
@@ -136,10 +136,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												Three
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-b
                                                         bg-gray-200
@@ -152,10 +152,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												Three
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-b
                                                         bg-gray-200
@@ -168,7 +168,7 @@ const BookingCard = () => {
 												href="#"
 											>
 												Three
-											</a>
+											</span>
 										</li>
 									</ul>
 								</div>
@@ -205,7 +205,7 @@ const BookingCard = () => {
                                             "
 									>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-t
                                                         bg-gray-200
@@ -218,10 +218,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												11:00 am
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         bg-gray-200
                                                         hover:bg-gray-400
@@ -233,10 +233,10 @@ const BookingCard = () => {
 												href="#"
 											>
 												2:00 pm
-											</a>
+											</span>
 										</li>
 										<li className="">
-											<a
+											<span
 												className="
                                                         rounded-b
                                                         bg-gray-200
@@ -249,7 +249,7 @@ const BookingCard = () => {
 												href="#"
 											>
 												4:00 pm
-											</a>
+											</span>
 										</li>
 									</ul>
 								</div>
