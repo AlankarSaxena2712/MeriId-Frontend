@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookingCard = () => {
+const BookingCard = ({booking}) => {
 	return (
 		<div className="flex w-1/2 justify-center my-4">
 			<div
@@ -19,13 +19,13 @@ const BookingCard = () => {
 					<div className="text-gray-700 font-bold text-l mb-2 ">
 						BookingId
 						<span className="text-gray-700 text-base pl-2">
-							BOOK1234567890
+							{booking.booking_id}
 						</span>
 					</div>
 					<div className="text-gray-700 font-bold text-l mb-2 ">
 						Date
 						<span className="text-gray-700 text-base pl-2">
-							20 Aug ,2022
+							{booking.slot_date}
 						</span>
 					</div>
 				</div>
@@ -44,7 +44,7 @@ const BookingCard = () => {
 								className="color000 svgShape"
 							/>
 						</svg>
-						&nbsp; Jonathan Reinink
+						&nbsp; {booking.name}
 					</p>
 				</div>
 				<div className="flex items-center">
@@ -53,28 +53,27 @@ const BookingCard = () => {
 							<span className="text-gray-700 font-bold text-l mb-2 pr-2">
 								Address
 							</span>
-							B 22/23 Gautam Nagar ,Electronic city, Loreum,Blah
-							Blah.
+							{booking.address}
 						</p>
 						<p className="text-gray-700 text-base mb-2 pt-1 pb-2">
 							<span className="text-gray-700 font-bold text-l mb-2 pr-2 ">
 								Pincode
 							</span>
-							200014
+							{booking.pincode}
 						</p>
 						<div className="flex items-center justify-between">
 							<div className="p-1">
 								<div className="dropdown inline-block relative">
-								<div class="dropdown">
-										<label tabindex="0" class="btn btn-sm m-1 bg-white text-black hover:bg-slate-200 border-slate-300 normal-case">
+								<div className="dropdown">
+										<label tabIndex="0" className="btn btn-sm m-1 bg-white text-black hover:bg-slate-200 border-slate-300 normal-case">
 											Operator
-                                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                             </svg>
 										</label>
 										<ul
-											tabindex="0"
-											class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+											tabIndex="0"
+											className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
 										>
 											<li>
 												<a>Item 1</a>
@@ -88,16 +87,16 @@ const BookingCard = () => {
 							</div>
 							<div className="p-1">
 								<div className="dropdown inline-block relative">
-								<div class="dropdown">
-										<label tabindex="0" class="btn btn-sm m-1 bg-white text-black hover:bg-slate-200 border-slate-300 normal-case">
+								<div className="dropdown">
+										<label tabIndex="0" className="btn btn-sm m-1 bg-white text-black hover:bg-slate-200 border-slate-300 normal-case">
 											Time Slot
-                                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                             </svg>
 										</label>
 										<ul
-											tabindex="0"
-											class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+											tabIndex="0"
+											className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
 										>
 											<li>
 												<a>Item 1</a>
