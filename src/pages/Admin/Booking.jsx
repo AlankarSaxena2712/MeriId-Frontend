@@ -7,7 +7,8 @@ const Booking = () => {
 	return (
         <div>
             <AdminHeader />
-            <div className="flex flex-wrap">
+            <h1 className="text-4xl font-bold pt-10 pb-10 text-center text-black">Booking</h1>
+            <div className="flex flex-wrap px-24 pb-12 ">       
                 <BookingCard />
                 <BookingCard />
                 <BookingCard />
@@ -15,6 +16,7 @@ const Booking = () => {
                 <BookingCard />
                 <BookingCard />
             </div>
+            
             <AdminNavbar />
         </div>
 	);

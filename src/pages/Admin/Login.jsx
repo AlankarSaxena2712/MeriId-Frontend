@@ -35,7 +35,7 @@ const Login = () => {
 									className="shadow appearance-none border rounded w-full h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-lg"
 									id="email"
 									type="text"
-									placeholder="Emter Email"
+									placeholder="Enter Email"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 								/>
