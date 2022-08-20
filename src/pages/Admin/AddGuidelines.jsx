@@ -44,8 +44,8 @@ const AddGuidelines = () => {
 					Guidelines
 				</h1>		
 				<div className="flex">
-					<div class="py-12 pr-32"> <img src={gif} alt="loading..." className="max-w-none h-96"/> </div>
-  					<div class="py-12 flex-2 text-gray-600 font-normal text-md"> 
+					<div className="py-12 pr-32"> <img src={gif} alt="loading..." className="max-w-none h-96"/> </div>
+  					<div className="py-12 flex-2 text-gray-600 font-normal text-md"> 
 					  {Parser(guidelines)}
 					</div>
 				</div>

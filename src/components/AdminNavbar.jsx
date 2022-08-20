@@ -103,7 +103,7 @@ const AdminNavbar = () => {
 						<>
 							<div className="rounded-full justify-center items-center flex gap-2 w-full px-8">
 								<GuidelineAddIcon className="w-8 h-8 text-black" />
-								<p className="text-md text-black">Add guidelines</p>
+								<p className="text-md text-black">Guidelines</p>
 							</div>
 						</>
 					)}

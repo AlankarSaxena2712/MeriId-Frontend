@@ -69,7 +69,7 @@ const AddOperator = () => {
 		<div className="mb-8 px-4 ">
 			<h1 className="text-4xl font-bold pt-10 pb-10 text-center text-black">Add Operator</h1>
 			<form
-				className="w-full max-w-xl bg-white shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
+				className="w-full max-w-xl bg-slate-200 shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
 				autoComplete="false"
 			>
 				<div className="flex flex-wrap -mx-3 mb-2">
@@ -81,7 +81,7 @@ const AddOperator = () => {
 							Name
 						</label>
 						<input
-							className=" placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-name"
 							type="text"
 							autoComplete="off"
@@ -103,7 +103,7 @@ const AddOperator = () => {
 							Email
 						</label>
 						<input
-							className=" placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-email"
 							type="email"
 							autoComplete="off"
@@ -123,7 +123,7 @@ const AddOperator = () => {
 							Phone Number
 						</label>
 						<input
-							className=" placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-phone-number"
 							type="tel"
 							maxLength={10}
@@ -147,7 +147,7 @@ const AddOperator = () => {
 							Pin Code
 						</label>
 						<input
-							className=" placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							className="  appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 							id="grid-zip"
 							type="text"
 							autoComplete="off"
@@ -166,7 +166,7 @@ const AddOperator = () => {
 							State
 						</label>
 						<input
-							className=" placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+							className="  appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
 							id="grid-state"
 							type="text"
 							placeholder="Enter State"
@@ -182,7 +182,7 @@ const AddOperator = () => {
 							City
 						</label>
 						<input
-							className="placeholder-gray-500 appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+							className=" appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
 							id="grid-city"
 							type="text"
 							placeholder="Enter City"

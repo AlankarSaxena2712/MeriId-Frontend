@@ -13,6 +13,7 @@ import OperatorList from "../../pages/Admin/OperatorList";
 import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
+import Booking from "../../pages/Admin/Booking";
 
 const Router = () => {
 	const { pathname } = useLocation();
@@ -62,6 +63,12 @@ const Router = () => {
 					<Route
 						path="/admin/guidelines/add"
 						element={<AddGuidelines />}
+					/>
+				</Route>
+				<Route path="/admin/bookings" element={<PrivateRoute />}>
+					<Route
+						path="/admin/bookings"
+						element={<Booking />}
 					/>
 				</Route>
 				<Route
