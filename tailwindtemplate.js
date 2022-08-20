@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         meriBlue: "#1c658c",
         meriLightBlue: "#398ab9",
-        meriCreme: "#d8d2cb",
+        meriWhite: "#d8d2cb",
         meriGrey: "#eeeeee", 
         meriInactiveGrey: "#b0b6c0"
       },

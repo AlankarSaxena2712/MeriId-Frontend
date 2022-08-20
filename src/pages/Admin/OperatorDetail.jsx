@@ -61,7 +61,7 @@ const OperatorDetail = () => {
                     </div>
                 ) : (
                     <>
-                        <div className="tabs tabs-boxed flex justify-center gap-10 bg-meriCreme">
+                        <div className="tabs tabs-boxed flex justify-center gap-10 bg-meriWhite">
                             <span onClick={() => setTabSelected(0)} className={`tab tab-lg text-2xl ${tabSelected === 0 ? "tab-active" : ""}`}>Given Task</span> 
                             <span onClick={() => setTabSelected(1)} className={`tab tab-lg text-2xl ${tabSelected === 1 ? "tab-active" : ""}`}>Attendance</span> 
                             <span onClick={() => setTabSelected(2)} className={`tab tab-lg text-2xl ${tabSelected === 2 ? "tab-active" : ""}`}>Feedback</span>

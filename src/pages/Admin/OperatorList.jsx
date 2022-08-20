@@ -34,7 +34,7 @@ const OperatorList = () => {
 	return (
 		<>
 			<AdminHeader />
-			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-meriCreme"> 
+			<div className="pt-3 px-8 md:px-32 w-full h-full pb-16 bg-white"> 
 				<h1 className="text-3xl font-bold p-4 text-center mb-5">
 					Operators
 				</h1>

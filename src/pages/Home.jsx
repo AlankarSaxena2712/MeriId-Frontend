@@ -2,11 +2,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import UserHeader from '../components/user/UserHeader';
 import UserNavbar from '../components/user/UserNavbar';
-import AddUser from "./User/AddUser";
-import Loginuser from './User/Loginuser';
-import Showbooking from './User/Showbooking';
-import UserInfo from './User/UserInfo';
-import UserGuidelines from './User/UserGuidelines';
 
 const Home = () => {
   // const {pathname} = useLocation();
@@ -37,12 +32,6 @@ const Home = () => {
     <div className='flex flex-col h-screen bg-white'>
     <UserHeader />
     <Routes>
-      <Route path="/addUser" element={<AddUser />} />
-      <Route path="/loginuser" element={<Loginuser />} />
-      <Route path="/showbooking" element={<Showbooking />} />
-      <Route path="/guidelines" element={<UserGuidelines />} />
-      <Route path="/userinfo" element={<UserInfo />} />
-      
     </Routes>
     <UserNavbar />
   </div>

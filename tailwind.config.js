@@ -6,7 +6,7 @@ module.exports = {
 			colors: {
 				meriBlue: "#1c658c",
 				meriLightBlue: "#398ab9",
-				meriCreme: "#feefec",
+				meriWhite: "#ffffff",
 				meriGrey: "#eeeeee", 
 				meriInactiveGrey: "#b0b6c0",
 				meriPurple: "#dc9cfd",

@@ -10,7 +10,6 @@ import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";
 import OperatorDetail from "../../pages/Admin/OperatorDetail";
 import OperatorList from "../../pages/Admin/OperatorList";
-import Home from "../../pages/Home";
 import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 
@@ -39,8 +38,6 @@ const Router = () => {
 	return (
 		<AuthProvider>
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/user/*" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
 				<Route path="/admin/operator/list" element={<PrivateRoute />}>
 					<Route

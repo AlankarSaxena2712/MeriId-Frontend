@@ -26,7 +26,6 @@ const Admin = () => {
 		<div className="flex flex-col h-screen bg-meriGrey">
 			<AdminHeader />
 			<Routes>
-				
 				<Route
 					path="/*"
 					element={

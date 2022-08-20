@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./config/routes/Router";
+import "./index.css";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter className = "font-family">
 			<Routes />
 		</BrowserRouter>
 	);

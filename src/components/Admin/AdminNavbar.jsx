@@ -18,7 +18,7 @@ const AdminNavbar = () => {
 	};
 
 	return (
-		<footer className="fixed bottom-0 left-0 right-0 flex justify-center items-center h-16 bg-meriCreme border-t-2 border-orange-200">
+		<footer className="fixed bottom-0 left-0 right-0 flex justify-center items-center h-16 bg-meriWhite shadow-md shadow-black">
 			<nav className="flex justify-around items-center h-full w-full">
 				<NavLink
 					to={"/admin/operator/list"}
