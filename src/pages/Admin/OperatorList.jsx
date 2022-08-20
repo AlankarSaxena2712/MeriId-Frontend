@@ -44,16 +44,18 @@ const OperatorList = () => {
 	  			</div>
 				) : (
 					<div className="w-full">
-						<div className="flex flex-wrap -m-4">
+						<div className="flex flex-wrap -m-4 gap-6">
 							{operators.map((operator, index) => (
-								<div key={index} className="card w-96 bg-slate-100 shadow-xl m-2 rounded-md">
+								<div key={index} className="card w-96 bg-slate-100 shadow-md m-2 rounded-md">
 									<div className="card-body">
 										<h2 className="card-title">{operator.name}</h2>
-										<p>{operator.email}</p>
-										<p>{operator.phone_number}</p>
-										<p>{operator.city},{" "}{operator.state},{" "}{operator.pin_code}</p>
+										<p>OP343535</p>
 										<Link to={`/admin/operator/${operator.id}`} className="card-actions justify-end">
-											<button className="btn btn-info btn-outline">View Details</button>
+											<button className="text-white text-sm inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0">
+												<span className="">
+													View Details
+												</span>
+											</button>
 										</Link>
 									</div>
 								</div>

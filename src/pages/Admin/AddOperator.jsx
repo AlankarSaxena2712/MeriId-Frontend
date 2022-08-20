@@ -69,7 +69,7 @@ const AddOperator = () => {
 		<div className="mb-8 px-4 ">
 			<h1 className="text-4xl font-bold pt-10 pb-10 text-center text-black">Add Operator</h1>
 			<form
-				className="w-full max-w-xl bg-slate-200 shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100"
+				className="w-full max-w-xl bg-slate-200 shadow-md rounded px-8 pt-6 pb-8 m-auto mb-mb-100 mt-24"
 				autoComplete="false"
 			>
 				<div className="flex flex-wrap -mx-3 mb-2">

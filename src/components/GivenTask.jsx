@@ -18,19 +18,19 @@ const GivenTask = () => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr className=" bg-green-100">
-						<th className="bg-green-100">1</th>
-						<td className="bg-green-100">BK0001</td>
-						<td className="bg-green-100">1-2 PM</td>
-						<td className="bg-green-100">Click here</td>
-						<td className="bg-green-100">Completed</td>
+					<tr className=" ">
+						<th className="">1</th>
+						<td className="">BK0001</td>
+						<td className="">1-2 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
 					</tr>
 					<tr>
-						<th className="bg-green-100">2</th>
-						<td className="bg-green-100">BK0002</td>
-						<td className="bg-green-100">2-3 PM</td>
-						<td className="bg-green-100">Click here</td>
-						<td className="bg-green-100">Completed</td>
+						<th className="">2</th>
+						<td className="">BK0002</td>
+						<td className="">2-3 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
 					</tr>
 					<tr>
 						<th className="bg-red-100">3</th>
@@ -40,11 +40,60 @@ const GivenTask = () => {
 						<td className="bg-red-100">Pending</td>
 					</tr>
 					<tr>
-						<th className="bg-green-100">4</th>
-						<td className="bg-green-100">BK0004</td>
-						<td className="bg-green-100">4-5 PM</td>
-						<td className="bg-green-100">Click here</td>
-						<td className="bg-green-100">Completed</td>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
+					</tr>
+					<tr>
+						<th className="">4</th>
+						<td className="">BK0004</td>
+						<td className="">4-5 PM</td>
+						<td className="">Click here</td>
+						<td className="">Completed</td>
 					</tr>
 				</tbody>
 			</table>

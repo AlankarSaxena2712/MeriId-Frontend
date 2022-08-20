@@ -28,7 +28,7 @@ const Attendance = () => {
 				<table className="table w-full">
 					<thead>
 						<tr>
-							<th></th>
+							<th>S.No</th>
 							<th>Date</th>
 							<th>Punch In</th>
 							<th>Punch Out</th>
@@ -37,61 +37,121 @@ const Attendance = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className=" bg-green-100">
-							<th className="bg-green-100">1</th>
-							<td className="bg-green-100">20-08-2022</td>
-							<td className="bg-green-100">10:02:00</td>
-							<td className="bg-green-100">-</td>
-							<td className="bg-green-100">Present</td>
-							<td className="bg-green-100">
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
 								<label for="slots-modal" className="modal-button cursor-pointer">
 									<EyeLogo className="w-6 h-6" />
 								</label>
 							</td>
 						</tr>
-						<tr className=" bg-green-100">
-							<th className="bg-green-100">1</th>
-							<td className="bg-green-100">20-08-2022</td>
-							<td className="bg-green-100">10:02:00</td>
-							<td className="bg-green-100">-</td>
-							<td className="bg-green-100">Present</td>
-							<td className="bg-green-100">
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
 							<label for="slots-modal" className="modal-button cursor-pointer">
 									<EyeLogo className="w-6 h-6" />
 								</label>
 							</td>
 						</tr>
-						<tr className=" bg-green-100">
-							<th className="bg-green-100">1</th>
-							<td className="bg-green-100">20-08-2022</td>
-							<td className="bg-green-100">10:02:00</td>
-							<td className="bg-green-100">-</td>
-							<td className="bg-green-100">Present</td>
-							<td className="bg-green-100">
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
 							<label for="slots-modal" className="modal-button cursor-pointer">
 									<EyeLogo className="w-6 h-6" />
 								</label>
 							</td>
 						</tr>
-						<tr className=" bg-green-100">
-							<th className="bg-green-100">1</th>
-							<td className="bg-green-100">20-08-2022</td>
-							<td className="bg-green-100">10:02:00</td>
-							<td className="bg-green-100">-</td>
-							<td className="bg-green-100">Present</td>
-							<td className="bg-green-100">
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
 							<label for="slots-modal" className="modal-button cursor-pointer">
 									<EyeLogo className="w-6 h-6" />
 								</label>
 							</td>
 						</tr>
-						<tr className=" bg-green-100">
-							<th className="bg-green-100">1</th>
-							<td className="bg-green-100">20-08-2022</td>
-							<td className="bg-green-100">10:02:00</td>
-							<td className="bg-green-100">-</td>
-							<td className="bg-green-100">Present</td>
-							<td className="bg-green-100">
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
+							<label for="slots-modal" className="modal-button cursor-pointer">
+									<EyeLogo className="w-6 h-6" />
+								</label>
+							</td>
+						</tr>
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
+							<label for="slots-modal" className="modal-button cursor-pointer">
+									<EyeLogo className="w-6 h-6" />
+								</label>
+							</td>
+						</tr>
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
+							<label for="slots-modal" className="modal-button cursor-pointer">
+									<EyeLogo className="w-6 h-6" />
+								</label>
+							</td>
+						</tr>
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
+							<label for="slots-modal" className="modal-button cursor-pointer">
+									<EyeLogo className="w-6 h-6" />
+								</label>
+							</td>
+						</tr>
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
+							<label for="slots-modal" className="modal-button cursor-pointer">
+									<EyeLogo className="w-6 h-6" />
+								</label>
+							</td>
+						</tr>
+						<tr className=" ">
+							<th className="">1</th>
+							<td className="">20-08-2022</td>
+							<td className="">10:02:00</td>
+							<td className="">-</td>
+							<td className="">Present</td>
+							<td className="">
 							<label for="slots-modal" className="modal-button cursor-pointer">
 									<EyeLogo className="w-6 h-6" />
 								</label>
