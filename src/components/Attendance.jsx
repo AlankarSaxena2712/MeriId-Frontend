@@ -1,7 +1,42 @@
-import React from "react";
+import React , {useState , useEffect } from "react";
+import axios from "axios";
 import { ReactComponent as EyeLogo } from "../static/icons/eye-solid.svg";
+import { GLOBAL_URL } from "../config/global/Contant";
+import { toast } from "react-toastify";
 
-const Attendance = () => {
+const Attendance = ({uuid}) => {
+
+	const [isLoading, setLoading] = useState(true);
+	const [feedback, setFeedback] = useState([]);
+	const [startDate, setStartDate] = useState("");
+	const [endDate, setEndDate] = useState("");
+	
+
+	const getAttendance = async () => {
+		await axios
+			.get(`${GLOBAL_URL}/general/feedback?operator=${uuid}&date_from=${startDate}date_to=${endDate}`, {
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization" : `Token ${localStorage.getItem("token")}`,
+				},
+			})
+			.then(async (response) => {
+				setFeedback(response.data.data);
+			})
+			.catch(async (error) => {
+				console.log(error);
+			})
+			.finally(() => {
+				setLoading(false);
+				toast.success("hello");
+			});
+	};
+
+	useEffect(() => {
+		getAttendance();
+	}, []);
+
+
 	return (
 		<>
 			<div className="overflow-x-auto container px-5 mx-auto">
@@ -13,6 +48,8 @@ const Attendance = () => {
 							id="date-from"
 							className="bg-gray-50 border block border-gray-300 sm:text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 pl-4 p-2.5   "
 							placeholder="Select date"
+							value={startDate}
+							onChange={(e) => setStartDate(e.target.value)}
 						/>
 					</div>
 					<div className="flex gap-2 items-center">
@@ -22,6 +59,8 @@ const Attendance = () => {
 							id="date-to"
 							className="bg-gray-50 border block border-gray-300  sm:text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 pl-4 p-2.5 "
 							placeholder="Select date"
+							value={endDate}
+							onChange={(e) => setEndDate(e.target.value)}
 						/>
 					</div>
 				</div>

@@ -7,6 +7,7 @@ import Attendance from "../../components/Attendance";
 import Feedback from "../../components/Feedback";
 import GivenTask from "../../components/GivenTask";
 import GoogleMap from "../../components/GoogleMap";
+import Spinner from "../../components/Spinner";
 import { GLOBAL_URL } from "../../config/global/Contant";
 import Email from "../../static/img/email.png";
 import Phone from "../../static/img/phone.png";
@@ -18,6 +19,7 @@ const OperatorDetail = () => {
 	const [operator, setOperator] = useState(null);
 	const [tabSelected, setTabSelected] = useState(0);
 	const [locationOpen, setLocationOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
 
@@ -37,7 +39,7 @@ const OperatorDetail = () => {
 					console.log(err);
 				})
 				.finally(() => {
-					// setLoading(false);
+					setLoading(false);
 				});
 		};
 		fetchData();
@@ -57,8 +59,15 @@ const OperatorDetail = () => {
                     </button>
                 </Link>
 			</div>
-			<div className="bg-slate-100 p-5 m-5 flex justify-between rounded mt-6 container px-5 mx-auto">
-				<div>
+   
+			<div className="bg-slate-100 p-5 m-5 flex justify-between rounded mt-6 container px-5 mx-auto">		
+            {
+                loading ?
+                <div class="flex justify-center items-center h-full w-full ">
+                        <Spinner />
+                </div>
+                 :  
+            	<div>
 					<div className="flex gap-5">
 						<img src={User} alt="email" className="h-6 w-6" />
 						<p className="text-xl font-bold">{operator?.name}</p>
@@ -72,6 +81,7 @@ const OperatorDetail = () => {
 						<p className="text-xl">{operator?.phone_number}</p>
 					</div>
 				</div>
+            }
 				<div className="self-end">
 					<button
 						className="btn btn-primary bg-orange-500 border-orange-500 hover:bg-orange-600 hover:border-orange-600"
@@ -116,13 +126,13 @@ const OperatorDetail = () => {
 					<div className="">
 						{tabSelected === 0 && (
 							<div className="p-5">
-								<GivenTask />
+								<GivenTask uuid={uuid} />
 							</div>
 						)}
 
 						{tabSelected === 1 && (
 							<div className="p-5">
-								<Attendance />
+								<Attendance uuid ={uuid} />
 							</div>
 						)}
 
