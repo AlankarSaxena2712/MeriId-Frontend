@@ -38,6 +38,7 @@ const GivenTask = ({ uuid }) => {
 
 	useEffect(() => {
 		getGiventask();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [date]);
 
 	return (

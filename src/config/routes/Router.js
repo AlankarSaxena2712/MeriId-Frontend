@@ -9,6 +9,7 @@ import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
 import Booking from "../../pages/Admin/Booking";
+// eslint-disable-next-line
 import devTools from "devtools-detect";
 import ChatBot from "../../components/ChatBot";
 import { ToastContainer } from "react-toastify";

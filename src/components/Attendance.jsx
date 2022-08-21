@@ -98,6 +98,7 @@ const Attendance = ({ uuid }) => {
 
 	useEffect(() => {
 		getAttendance();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [endDate, startDate]);
 
 	return (
