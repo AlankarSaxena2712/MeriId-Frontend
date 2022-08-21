@@ -8,3 +8,8 @@ body {
     font-family: 'Montserrat';
     background-color: white;
   }
+
+#kommunicate-widget-iframe {
+    position: fixed;
+    bottom: 5rem;
+}

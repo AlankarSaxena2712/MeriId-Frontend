@@ -37,7 +37,9 @@ const AdminNavbar = () => {
 						<>
 							<div className="rounded-full justify-center items-center flex gap-2 w-full px-8">
 								<OperatorListIcon className="w-8 h-8 text-black" />
-								<p className="text-md text-black">Operator list</p>
+								<p className="text-md text-black">
+									Operator list
+								</p>
 							</div>
 						</>
 					)}
@@ -59,7 +61,9 @@ const AdminNavbar = () => {
 						<>
 							<div className="rounded-full justify-center items-center flex gap-2 w-full px-8">
 								<OperatorAddIcon className="w-8 h-8 text-black" />
-								<p className="text-md text-black">Add operator</p>
+								<p className="text-md text-black">
+									Add operator
+								</p>
 							</div>
 						</>
 					)}

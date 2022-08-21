@@ -6,6 +6,7 @@ import AdminHeader from "../../components/AdminHeader";
 import AdminNavbar from "../../components/AdminNavbar";
 import BookingCard from "../../components/BookingCard";
 import { GLOBAL_URL } from "../../config/global/Contant";
+import { toast } from "react-toastify";
 
 const Booking = () => {
 	const [bookings, setBookings] = useState([]);
@@ -20,10 +21,9 @@ const Booking = () => {
 			})
 			.then((res) => {
 				setBookings(res.data.data);
-				console.log(res.data.data);
 			})
 			.catch((err) => {
-				console.log(err);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setLoading(false);
@@ -43,7 +43,7 @@ const Booking = () => {
 			<div className="flex flex-wrap px-36 mb-32 justify-center gap-0">
 				{loading ? (
 					<div className="items-center justify-center h-screen pt-20">
-                        <div className="loader"></div>
+						<div className="loader"></div>
 					</div>
 				) : (
 					bookings.map((booking) => {

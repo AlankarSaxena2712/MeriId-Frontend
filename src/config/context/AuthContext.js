@@ -10,6 +10,8 @@ import useToken from "../hooks/useToken";
 import { initialState, reducer } from "../hooks/useReducer";
 import { GLOBAL_URL } from "../global/Contant";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Spinner from "../../components/Spinner";
 
 const AuthContext = createContext({});
 
@@ -36,6 +38,7 @@ export const AuthProvider = ({ children }) => {
 				localStorage.setItem("user", JSON.stringify(data[0]));
 			})
 			.catch(async (error) => {
+				toast.error("Something went wrong! Please try again.");
 				setError(await error);
 			});
 	};
@@ -60,11 +63,12 @@ export const AuthProvider = ({ children }) => {
 			})
 			.then(() => {
 				getUserData();
-			}).then(() => {
+			})
+			.then(() => {
 				navigate("/admin/operator/list");
 			})
 			.catch((err) => {
-				console.log(err.response);
+				toast.error("Something went wrong! Please try again.");
 				setError("Something went wrong");
 			})
 			.finally(() => {
@@ -99,31 +103,20 @@ export const AuthProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const memoedValue = {
-			logout,
-			user,
-			loading,
-			error,
-			state,
-			dispatch,
-			getUserData,
-			adminLogin,
-			loginLoading,
-		};
+		logout,
+		user,
+		loading,
+		error,
+		state,
+		dispatch,
+		getUserData,
+		adminLogin,
+		loginLoading,
+	};
 
 	return (
 		<AuthContext.Provider value={memoedValue}>
-			{loading ? (
-				<div className="flex justify-center items-center">
-					<div
-						className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
-						role="status"
-					>
-						<span className="visually-hidden">Loading...</span>
-					</div>
-				</div>
-			) : (
-				!loading && children
-			)}
+			{loading ? <Spinner /> : !loading && children}
 		</AuthContext.Provider>
 	);
 };

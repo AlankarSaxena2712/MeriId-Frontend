@@ -44,7 +44,7 @@ const Attendance = ({ uuid }) => {
 				setAttendance(response.data.data);
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setLoading(false);
@@ -63,7 +63,7 @@ const Attendance = ({ uuid }) => {
 				setSlotsData(response.data.data);
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setSlotsLoading(false);
@@ -92,7 +92,7 @@ const Attendance = ({ uuid }) => {
 				document.body.removeChild(link);
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			});
 	};
 

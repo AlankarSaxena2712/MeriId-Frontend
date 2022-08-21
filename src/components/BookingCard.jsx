@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { GLOBAL_URL } from "../config/global/Contant";
 import Spinner from "./Spinner";
+import { toast } from "react-toastify";
 
 const BookingCard = ({ booking }) => {
 	const [operators, setOperators] = useState([]);
@@ -23,10 +24,9 @@ const BookingCard = ({ booking }) => {
 			})
 			.then((res) => {
 				setOperators(res.data.data);
-				console.log(res.data.data);
 			})
 			.catch((err) => {
-				console.log(err);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setOperatorLoading(false);
@@ -49,10 +49,9 @@ const BookingCard = ({ booking }) => {
 				setTimeSlots(
 					res.data.data.filter((timeSlot) => timeSlot.status === true)
 				);
-				console.log(res.data.data);
 			})
 			.catch((err) => {
-				console.log(err);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setTimeSlotLoading(false);
@@ -76,10 +75,9 @@ const BookingCard = ({ booking }) => {
 			)
 			.then((res) => {
 				setEditBooking(false);
-				console.log(res);
 			})
 			.catch((err) => {
-				console.log(err);
+				toast.error("Something went wrong! Please try again.");
 			});
 	};
 

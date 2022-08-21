@@ -3,6 +3,7 @@ import { GLOBAL_URL } from "../config/global/Contant";
 import { ReactComponent as Empty } from "../static/icons/empty.svg";
 import axios from "axios";
 import Spinner from "./Spinner";
+import { toast } from "react-toastify";
 
 const GivenTask = ({ uuid }) => {
 	const [isLoading, setLoading] = useState(true);
@@ -28,7 +29,7 @@ const GivenTask = ({ uuid }) => {
 				setGiventask(response.data.data);
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setLoading(false);

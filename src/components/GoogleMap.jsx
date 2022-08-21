@@ -4,7 +4,7 @@ import GoogleMapReact from "google-map-react";
 import { ReactComponent as Void } from "../static/icons/void.svg";
 import { GLOBAL_URL } from "../config/global/Contant";
 import Spinner from "./Spinner";
-import { data } from "autoprefixer";
+import { toast } from "react-toastify";
 
 const Marker = () => {
 	return (
@@ -39,7 +39,7 @@ const GoogleMap = ({uuid}) => {
 				}
 			)
 			.then(async (response) => {
-				data = response.data.data
+				let data = response.data.data
 				setGoogle({
 						center: {
 							lat: parseFloat(data.lat),
@@ -50,7 +50,7 @@ const GoogleMap = ({uuid}) => {
 			});
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setLoading(false);
@@ -63,7 +63,6 @@ const GoogleMap = ({uuid}) => {
 			getMapData();
 		} , 15000);
 		return () => clearInterval(interval);
-		
 	}, []);
 
 	return (

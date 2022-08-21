@@ -10,6 +10,9 @@ import PrivateRoute from "./PrivateRoute";
 import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
 import Booking from "../../pages/Admin/Booking";
 import devTools from "devtools-detect";
+import ChatBot from "../../components/ChatBot";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Router = () => {
 	const { pathname } = useLocation();
@@ -21,7 +24,7 @@ const Router = () => {
 		});
 		window.addEventListener("devtoolschange", function (e) {
 			if (e.detail.isOpen) {
-				localStorage.clear()
+				localStorage.clear();
 				window.location.href = "/unauthorized";
 			}
 		});
@@ -85,6 +88,8 @@ const Router = () => {
 					}
 				/>
 			</Routes>
+			<ChatBot />
+			<ToastContainer />
 		</AuthProvider>
 	);
 };

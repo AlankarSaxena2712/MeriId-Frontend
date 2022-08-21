@@ -5,6 +5,7 @@ import { GLOBAL_URL } from "../config/global/Contant";
 import { ReactComponent as Empty } from "../static/icons/empty.svg";
 import axios from "axios";
 import Spinner from "./Spinner";
+import { toast } from "react-toastify";
 
 const Feedback = ({ uuid }) => {
 	const [isLoading, setLoading] = useState(true);
@@ -22,7 +23,7 @@ const Feedback = ({ uuid }) => {
 				setFeedback(response.data.data);
 			})
 			.catch(async (error) => {
-				console.log(error);
+				toast.error("Something went wrong! Please try again.");
 			})
 			.finally(() => {
 				setLoading(false);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AdminHeader from "../../components/AdminHeader";
 import useAuth from "../../config/context/AuthContext";
 import gif from "../../static/gif/signin.gif";
+import { toast } from "react-toastify";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -10,7 +11,11 @@ const Login = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await adminLogin(email, password);
+		if (email === "" || password === "") {
+			toast.error("Please fill all the fields");
+		} else {
+			await adminLogin(email, password);
+		}
 	};
 
 	return (
@@ -61,7 +66,7 @@ const Login = () => {
 							<div className="flex items-center justify-between">
 								<button
 									className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-lg"
-									type="button"
+									type="submit"
 									onClick={(e) => handleSubmit(e)}
 								>
 									{loginLoading ? (
@@ -86,7 +91,7 @@ const Login = () => {
 						<img
 							src={gif}
 							className="max-w-none"
-							style={{"width": "100%"}}
+							style={{ width: "100%" }}
 							alt="login-svg"
 						/>{" "}
 					</div>
