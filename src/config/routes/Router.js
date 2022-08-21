@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-import {
-	Route,
-	Routes,
-	useLocation,
-	useNavigate,
-} from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import AddGuidelines from "../../pages/Admin/AddGuidelines";
 import AddOperator from "../../pages/Admin/AddOperator";
 import Login from "../../pages/Admin/Login";
@@ -14,10 +9,23 @@ import { AuthProvider } from "../context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import { ReactComponent as NotFound } from "../../static/icons/notfound.svg";
 import Booking from "../../pages/Admin/Booking";
+import devTools from "devtools-detect";
 
 const Router = () => {
 	const { pathname } = useLocation();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.addEventListener("contextmenu", function (e) {
+			e.preventDefault();
+		});
+		window.addEventListener("devtoolschange", function (e) {
+			if (e.detail.isOpen) {
+				localStorage.clear()
+				window.location.href = "/unauthorized";
+			}
+		});
+	}, []);
 
 	useEffect(() => {
 		if (pathname === "/") {
@@ -66,16 +74,13 @@ const Router = () => {
 					/>
 				</Route>
 				<Route path="/admin/bookings" element={<PrivateRoute />}>
-					<Route
-						path="/admin/bookings"
-						element={<Booking />}
-					/>
+					<Route path="/admin/bookings" element={<Booking />} />
 				</Route>
 				<Route
 					path="/*"
 					element={
 						<h1 className="flex justify-center items-center text-4xl font-bold h-full  py-28 px-32">
-								<NotFound />
+							<NotFound />
 						</h1>
 					}
 				/>
