@@ -28,7 +28,6 @@ const Attendance = ({uuid}) => {
 			})
 			.finally(() => {
 				setLoading(false);
-				toast.success("hello");
 			});
 	};
 

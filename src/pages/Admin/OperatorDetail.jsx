@@ -93,7 +93,7 @@ const OperatorDetail = () => {
 			</div>
 			{locationOpen ? (
 				<div className="flex justify-center items-center">
-					<GoogleMap />
+					<GoogleMap uuid={uuid} />
 				</div>
 			) : (
 				<>
