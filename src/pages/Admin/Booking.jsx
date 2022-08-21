@@ -38,7 +38,7 @@ const Booking = () => {
 		<div>
 			<AdminHeader />
 			<h1 className="text-4xl font-bold pt-10 pb-10 text-center text-black">
-				Booking
+				Bookings
 			</h1>
 			<div className="flex flex-wrap px-36 mb-32 justify-center gap-0">
 				{loading ? (
@@ -48,7 +48,7 @@ const Booking = () => {
 				) : (
 					bookings.map((booking) => {
 						return (
-							<BookingCard key={booking.id} booking={booking} />
+							<BookingCard key={booking.uuid} booking={booking} />
 						);
 					})
 				)}
