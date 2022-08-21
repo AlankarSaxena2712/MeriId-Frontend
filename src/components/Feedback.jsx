@@ -9,7 +9,7 @@ import Spinner from "./Spinner";
 const Feedback = ({ uuid }) => {
 	const [isLoading, setLoading] = useState(true);
 	const [feedback, setFeedback] = useState([]);
-	
+
 	const feedBackOfOperator = async () => {
 		await axios
 			.get(`${GLOBAL_URL}/general/feedback?operator=${uuid}`, {
@@ -34,15 +34,17 @@ const Feedback = ({ uuid }) => {
 	}, []);
 
 	return (
-		<section class="text-gray-600 body-font">
-			<div class="container px-5 mx-auto">
-				<div class="flex flex-wrap -m-4">
+		<section className="text-gray-600 body-font">
+			<div className="container px-5 mx-auto">
+				<div className="flex flex-wrap -m-4">
 					{isLoading ? (
-						<div class="flex justify-center items-center h-full w-full mt-36">
+						<div className="flex justify-center items-center h-full w-full mt-36">
 							<Spinner />
 						</div>
-					) : feedback !== [] ? (
-						feedback.map((f) => <FeedbackCard feedback={f} />)
+					) : feedback.length > 0 ? (
+						feedback.map((f, index) => (
+							<FeedbackCard feedback={f} key={index} />
+						))
 					) : (
 						<div className="flex justify-center item-center h-full w-full mt-16">
 							<Empty />

@@ -9,7 +9,7 @@ const GivenTask = ({ uuid }) => {
 	const [giventask, setGiventask] = useState([]);
 	const [date, setDate] = useState(
 		`${new Date().getFullYear()}-${
-			new Date().getMonth() + 1
+			("0" + (new Date().getMonth() + 1))
 		}-${new Date().getDate()}`
 	);
 
@@ -26,7 +26,6 @@ const GivenTask = ({ uuid }) => {
 			)
 			.then(async (response) => {
 				setGiventask(response.data.data);
-				console.log(giventask);
 			})
 			.catch(async (error) => {
 				console.log(error);
@@ -43,22 +42,24 @@ const GivenTask = ({ uuid }) => {
 	return (
 		<div className="overflow-x-auto container px-5 mx-auto">
 			<div className="flex justify-end my-4">
-						<input
-							type="date"
-							className="bg-gray-50 border block 
+				<input
+					type="date"
+					className="bg-gray-50 border block 
 				border-gray-300
 				text-gray-900 
 				sm:text-sm rounded-lg 
 				focus:ring-orange-500
 				 focus:border-orange-500 
 				 pl-4 p-2.5 "
-							placeholder="Select date"
-							value={date}
-							onChange={(e) =>{ setDate(e.target.value) }}
-						/>
-					</div>
+					placeholder="Select date"
+					value={date}
+					onChange={(e) => {
+						setDate(e.target.value);
+					}}
+				/>
+			</div>
 			{isLoading ? (
-				<div class="flex justify-center items-center h-full w-full mt-36">
+				<div className="flex justify-center items-center h-full w-full mt-36">
 					<Spinner />
 				</div>
 			) : giventask.length > 0 ? (
@@ -73,17 +74,16 @@ const GivenTask = ({ uuid }) => {
 							</tr>
 						</thead>
 						<tbody>
-						{
-							giventask.map((task) =>	
-								<tr className=" ">
+							{giventask.map((task, index) => (
+								<tr className=" " key={index}>
 									<th className="">1</th>
 									<td className="">{task.id}</td>
-									<td className="">{task.slot === null ? "-" : task.slot }</td>
+									<td className="">
+										{task.slot === null ? "-" : task.slot}
+									</td>
 									<td className="">{task.status}</td>
 								</tr>
-							)
-						}
-
+							))}
 						</tbody>
 					</table>
 				</>

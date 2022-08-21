@@ -49,14 +49,16 @@ const OperatorList = () => {
 								<div key={index} className="card w-96 bg-slate-100 shadow-md m-2 rounded-md">
 									<div className="card-body">
 										<h2 className="card-title">{operator.name}</h2>
-										<p>OP343535</p>
-										<Link to={`/admin/operator/${operator.id}`} className="card-actions justify-end">
-											<button className="text-white text-sm inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0">
-												<span className="">
-													View Details
-												</span>
-											</button>
-										</Link>
+										<div className="flex justify-between items-center">
+											<p>OP343535</p>
+											<Link to={`/admin/operator/${operator.id}`} className="card-actions justify-end">
+												<button className="text-white text-sm inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-orange-600 rounded mt-4 md:mt-0">
+													<span className="">
+														View Details
+													</span>
+												</button>
+											</Link>
+										</div>
 									</div>
 								</div>
 							))}

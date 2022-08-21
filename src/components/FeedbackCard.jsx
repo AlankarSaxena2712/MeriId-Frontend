@@ -3,8 +3,8 @@ import { ReactComponent as Star } from "../static/icons/star.svg";
 
 const FeedbackCard = ({ feedback }) => {
 	return (
-		<div class="p-4 md:w-1/2 w-full">
-			<div class="h-full bg-gray-100 p-8 rounded">
+		<div className="p-4 md:w-1/2 w-full">
+			<div className="h-full bg-gray-100 p-8 rounded">
 				<div className="flex justify-between">
 					<h2 className="font-bold text-black">
 						{feedback.booking_id}
@@ -35,12 +35,12 @@ const FeedbackCard = ({ feedback }) => {
 						{feedback.name}
 					</div>
 					<div className="flex gap-4">
-						{feedback.rating.map((i) => (
-							<Star className="h-6 w-6" />
+						{feedback.rating.map((i, index) => (
+							<Star className="h-6 w-6" key={index} />
 						))}
 					</div>
 				</h3>
-				<p class="leading-relaxed my-2">{feedback.description}</p>
+				<p className="leading-relaxed my-2">{feedback.description}</p>
 			</div>
 		</div>
 	);

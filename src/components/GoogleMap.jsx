@@ -59,11 +59,16 @@ const GoogleMap = ({uuid}) => {
 
 	useEffect(() => {
 		getMapData();
+		const interval = setInterval(() => {
+			getMapData();
+		} , 15000);
+		return () => clearInterval(interval);
+		
 	}, []);
 
 	return (
 		isLoading ? (
-			<div class="flex justify-center items-center h-full w-full mt-36">
+			<div className="flex justify-center items-center h-full w-full mt-36">
 				<Spinner />
 			</div>
 		) :
@@ -85,7 +90,7 @@ const GoogleMap = ({uuid}) => {
 		</div> 
 		:
 		<>
-		<div class="flex flex-col gap-8 justify-center items-center h-full w-full mt-12">
+		<div className="flex flex-col gap-8 justify-center items-center h-full w-full mt-12">
 						<Void />
 						<div className=" text-2xl font-bold "> Operator is Inactive Right Now </div>
 		</div>
