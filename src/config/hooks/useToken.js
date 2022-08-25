@@ -13,6 +13,13 @@ export default function useToken() {
 		return JSON.parse(data);
 	};
 
+	const isLogin = () => {
+		const token = localStorage.getItem("token");
+		const user = localStorage.getItem("user");
+		const captcha = localStorage.getItem("captcha");
+		return token && user && captcha ? true : false;
+	};
+
 	const isUser = () => {
 		const data = localStorage.getItem("user");
 		if (data !== null) return true;
@@ -24,5 +31,6 @@ export default function useToken() {
 		getToken,
 		userData,
 		isUser,
+		isLogin,
 	};
 }

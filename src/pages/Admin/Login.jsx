@@ -9,24 +9,25 @@ import ReCAPTCHA from "react-google-recaptcha";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [captcha, setCaptcha] = useState(null);
+
 	const { adminLogin, loginLoading } = useAuth();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (email === "" || password === "") {
 			toast.error("Please fill all the fields");
+		} else if (captcha === null) {
+			toast.error("Please do the Recaptcha.")
 		} else {
 			await adminLogin(email, password);
 		}
 	};
 
-	function onChange(value) {
-		console.log("Captcha value:", value);
-		var Captcha = value;
-
-		// if (Captcha) {
-	  }
-	
+	const handleCaptcha = (value) => {
+		setCaptcha(value);
+		localStorage.setItem("captcha", value);
+	}
 
 	return (
 		<>
@@ -73,10 +74,11 @@ const Login = () => {
 									}
 								/>
 
-                            <ReCAPTCHA className="mt-4"
-                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                            onChange={onChange}
-                             /> 
+                            <ReCAPTCHA
+								className="mt-4"
+								sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+								onChange={(e) => handleCaptcha(e)}
+							/> 
 							</div>
 
 							<div className="flex items-center justify-between">

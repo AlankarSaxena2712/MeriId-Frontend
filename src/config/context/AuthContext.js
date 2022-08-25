@@ -81,6 +81,7 @@ export const AuthProvider = ({ children }) => {
 		dispatch({ type: "USER", payload: false });
 		localStorage.removeItem("user");
 		localStorage.removeItem("token");
+		localStorage.removeItem("captcha");
 		navigate("/admin/login");
 	};
 
@@ -89,7 +90,8 @@ export const AuthProvider = ({ children }) => {
 			setLoading(true);
 			if (
 				localStorage.getItem("token") !== "" &&
-				localStorage.getItem("user") !== ""
+				localStorage.getItem("user") !== "" &&
+				localStorage.getItem("captcha") !== ""
 			) {
 				dispatch({ type: "USER", payload: true });
 			} else {
