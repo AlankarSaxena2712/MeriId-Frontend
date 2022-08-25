@@ -3,6 +3,8 @@ import AdminHeader from "../../components/AdminHeader";
 import useAuth from "../../config/context/AuthContext";
 import gif from "../../static/gif/signin.gif";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -18,6 +20,14 @@ const Login = () => {
 		}
 	};
 
+	function onChange(value) {
+		console.log("Captcha value:", value);
+		var Captcha = value;
+
+		// if (Captcha) {
+	  }
+	
+
 	return (
 		<>
 			<AdminHeader />
@@ -28,7 +38,7 @@ const Login = () => {
 
 				<div className="flex justify-center items-center px-32">
 					<div className="flex justify-center items-center w-2/4 h-96">
-						<form className=" bg-slate-100 w-full h-full shadow-md rounded px-8 pt-12 pb-8 mb-4">
+						<form className=" bg-slate-100 w-full  shadow-md rounded px-8 pt-12 pb-8 mb-4">
 							<div className="mb-4">
 								<label
 									className="block text-gray-700 text-lg font-bold mb-2"
@@ -44,7 +54,7 @@ const Login = () => {
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 								/>
-							</div>
+							</div>.-+
 							<div className="mb-6">
 								<label
 									className="block text-gray-700 text-lg font-bold mb-2"
@@ -62,7 +72,13 @@ const Login = () => {
 										setPassword(e.target.value)
 									}
 								/>
+
+                            <ReCAPTCHA className="mt-4"
+                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                            onChange={onChange}
+                             /> 
 							</div>
+
 							<div className="flex items-center justify-between">
 								<button
 									className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-lg"

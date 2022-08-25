@@ -4,10 +4,15 @@ import { GLOBAL_URL } from "../../config/global/Contant";
 import AdminHeader from "../../components/AdminHeader";
 import AdminNavbar from "../../components/AdminNavbar";
 import { ReactComponent as Loader } from "../../static/icons/loader.svg";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Pincodes from "../../static/json/pincode.json";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
+function onChange(value) {
+	console.log("Captcha value:", value);
+  }
 
 const AddOperator = () => {
 	const [name, setName] = useState("");
@@ -208,6 +213,14 @@ const AddOperator = () => {
 							/>
 						</div>
 					</div>
+					
+					
+                    <ReCAPTCHA className="mt-4"
+                     sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                     onChange={onChange}
+                     /> 
+				     
+
 					<div className="flex items-center justify-end mt-5">
 						<button
 							className=" bg-orange-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
