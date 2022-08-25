@@ -47,8 +47,34 @@ const BookingCard = ({ booking }) => {
 			)
 			.then((res) => {
 				setTimeSlots(
-					res.data.data.filter((timeSlot) => timeSlot.status === true)
+					res.data.data.filter(
+						(timeSlot) => timeSlot.status === false
+					)
 				);
+			})
+			.catch((err) => {
+				toast.error("Something went wrong! Please try again.");
+			})
+			.finally(() => {
+				setTimeSlotLoading(false);
+			});
+	};
+
+	const releaseSlot = async (uuid, timeSlot) => {
+		await axios
+			.put(
+				`${GLOBAL_URL}/auth/operator/slot/release/${uuid}`,
+				{
+					slot: timeSlot,
+				},
+				{
+					headers: {
+						Authorization: `Token ${localStorage.getItem("token")}`,
+					},
+				}
+			)
+			.then((res) => {
+				toast.success("Slot released successfully!");
 			})
 			.catch((err) => {
 				toast.error("Something went wrong! Please try again.");
@@ -75,6 +101,7 @@ const BookingCard = ({ booking }) => {
 			)
 			.then((res) => {
 				setEditBooking(false);
+				window.location.reload();
 			})
 			.catch((err) => {
 				toast.error("Something went wrong! Please try again.");
@@ -88,7 +115,7 @@ const BookingCard = ({ booking }) => {
 		} else {
 			setEditBooking(false);
 		}
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
@@ -317,7 +344,13 @@ const BookingCard = ({ booking }) => {
 										</button>
 									) : (
 										<button
-											onClick={() => setEditBooking(true)}
+											onClick={() => {
+												setEditBooking(true);
+												releaseSlot(
+													operators.filter(i => i.name === booking.operator)[0].uuid,
+													booking.slot_time
+												);
+											}}
 											className="text-white inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
 										>
 											{" "}

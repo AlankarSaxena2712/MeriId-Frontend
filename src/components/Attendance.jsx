@@ -204,16 +204,21 @@ const Attendance = ({ uuid }) => {
 								</tr>
 							</thead>
 							<tbody>
-								{slotsData.map((item, index) => (
-									<tr key={index}>
-										<td>{item.slot}</td>
-										<td>
-											{item.status === true
-												? "Free"
-												: "Occupied"}
-										</td>
-									</tr>
-								))}
+								{slotsData.map((item, index) => {
+									console.log(item);
+									return (
+										<tr key={index}>
+											<td>{item.slot}</td>
+											<td>
+												{item.status}
+												{item.status === false
+													? "Free"
+													: "Occupied"}
+											</td>
+										</tr>
+									)
+								}
+								)}
 							</tbody>
 						</table>
 					)}

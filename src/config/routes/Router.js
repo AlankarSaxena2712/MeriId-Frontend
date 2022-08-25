@@ -23,12 +23,12 @@ const Router = () => {
 		document.addEventListener("contextmenu", function (e) {
 			e.preventDefault();
 		});
-		window.addEventListener("devtoolschange", function (e) {
-			if (e.detail.isOpen) {
-				localStorage.clear();
-				window.location.href = "/unauthorized";
-			}
-		});
+		// window.addEventListener("devtoolschange", function (e) {
+		// 	if (e.detail.isOpen) {
+		// 		localStorage.clear();
+		// 		window.location.href = "/unauthorized";
+		// 	}
+		// });
 	}, []);
 
 	useEffect(() => {

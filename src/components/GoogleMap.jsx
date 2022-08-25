@@ -18,6 +18,7 @@ const Marker = () => {
 const GoogleMap = ({uuid}) => {
 
 	const [isLoading, setLoading] = useState(true);
+	const [noOfCall, setNoOfCall] = useState(0);
 	const [google, setGoogle] = useState({
 		center: {
 			lat: null,
@@ -50,7 +51,9 @@ const GoogleMap = ({uuid}) => {
 			});
 			})
 			.catch(async (error) => {
-				toast.error("Something went wrong! Please try again.");
+				if (noOfCall < 2) {
+					toast.error("Something went wrong! Please try again.");
+				}
 			})
 			.finally(() => {
 				setLoading(false);
@@ -58,6 +61,7 @@ const GoogleMap = ({uuid}) => {
 	};
 
 	useEffect(() => {
+		setNoOfCall(noOfCall + 1);
 		getMapData();
 		const interval = setInterval(() => {
 			getMapData();
